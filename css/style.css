@@ -59,6 +59,7 @@ img {
 #headerImg{
 	height:400px;
     width:100%;
+    background:url(../assets/googleOaklandBlur.png) no-repeat 50% 50%;
 }
 
 h1 { 
@@ -141,12 +142,14 @@ figcaption {
 
 #googleMap {
 	height:570px;
-    width:100%;	
+    width:100%;
+    background:url(../assets/googleOakland.png) no-repeat 50% 50%;
 }
 
 #googleMapAlt {
 	height:650px;
-    width:100%;	
+    width:100%;
+    background:url(../assets/googleOakland.png) no-repeat 50% 50%
 }
 
 .infoBox{
@@ -339,8 +342,8 @@ input#search-button{
 	height:30px;
 	text-decoration:none;
 	border-style: none;
-	position:absolute;
 	font-family: 'Montserrat', sans-serif;
+    margin: -4px;
 }
 
 .myButton:hover {
