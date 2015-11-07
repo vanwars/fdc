@@ -1,15 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-#navBar{
+#navBar {
 	width: 100%;
 	background-color: #ffffff;
     z-index: 1;
     display: inline-block;
 }
 
-body{
-	padding:0;
-	margin:0;
+body {
+	padding: 0;
+	margin: 0;
 	margin-bottom: 30px;
 }
 
@@ -35,15 +35,15 @@ h4{
 	color: white;
     background-color: #3DBEC0;
     text-align: center;
-    font-size:1.2em;	
+    font-size: 1.2em;	
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    margin:0px;
+    margin: 0px;
     line-height: 40px;
 }
 
 h5{
-    font-size:1.2em;	
+    font-size: 1.2em;	
     font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 }
@@ -52,14 +52,14 @@ h5{
 img {
     width: 100%;
     height: auto;
-    width: auto\9;
+    width: auto;
 }
 
 
 #headerImg{
-	height:400px;
-    width:100%;
-    background:url(../assets/googleOaklandBlur.png) no-repeat 50% 50%;
+	height: 400px;
+    width: 100%;
+    background: url(../assets/googleOaklandBlur.png) no-repeat 50% 50%;
 }
 
 h1 { 
@@ -70,27 +70,25 @@ h1 {
 }
 
 
-p{
-	font-family: 'Montserrat', sans-serif;
-   font-weight: 440;
-   color: white; 
-
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: white;
 }
 
 .overlay {  
-    background:rgba(20, 10, 10, .3);
-    text-align:center;
-    width:100%;
-    height:100%; 
+    background: rgba(20, 10, 10, .3);
+    text-align: center;
+    width: 100%;
+    height: 100%; 
 }
-
 
 #titleText{
 	position: absolute; 
 	top: 80px; 
 	width: 760px;
-	left:0;
-	right:0;
+	left: 0;
+	right: 0;
 	margin-left:auto;
 	margin-right:auto;
 	text-align: center;
@@ -98,7 +96,6 @@ p{
 }
 
 #fixedNav {
-
     float:right;
     margin:8px;
     margin-top: 12px;
@@ -106,9 +103,8 @@ p{
 }
 
 #fixedNavSearch {
-
-    float:right;
-    margin:10px;
+    float: right;
+    margin: 10px;
     margin-right: 90px;
     margin-top: 14px;
 }
@@ -139,36 +135,36 @@ p{
 figcaption {
     background-color: #3DBEC0;
     text-align: center;
-    color:white;
-    size:2em;
+    color: white;
+    size: 2em;
 }
 
 #googleMap {
-	height:570px;
-    width:100%;
-    background:url(../assets/googleOakland.png) no-repeat 50% 50%;
+	height: 570px;
+    width: 100%;
+    background: url(../assets/googleOakland.png) no-repeat 50% 50%;
 }
 
 #googleMapAlt {
-	height:650px;
-    width:100%;
-    background:url(../assets/googleOakland.png) no-repeat 50% 50%
+	height: 650px;
+    width: 100%;
+    background: url(../assets/googleOakland.png) no-repeat 50% 50%;
 }
 
 .infoBox{
-	float:left;
+	float: left;
     padding: 20px;
-    height:120px;
-    width:380px;
+    height: 120px;
+    width: 380px;
 }
 
 #infoBoxHeader{
-	width:100%;
+	width: 100%;
 	background-color: #3DBEC0;
-	color:white;
+	color: white;
 }
 
-.storyProfile{
+.storyProfile {
     display: block;
 	width: 100%;
 	height: 120px;
@@ -179,19 +175,16 @@ figcaption {
     text-decoration: none;
 }
 
-#profilePicList{
-	height:80px;
-	width:80px;
-	padding:20px;
-	float:left;
-
-
+#profilePicList {
+	height: 80px;
+	width: 80px;
+	padding: 20px;
+	float: left;
 }
 
-.profilePic{
-	float:center;
-	height:120px;
-	width:120px;
+.profilePic {
+	height: 120px;
+	width: 120px;
 }
 
 .name{
