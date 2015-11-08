@@ -145,10 +145,9 @@ figcaption {
     size: 2em;
 }
 
-#googleMap {
+#map {
 	height: 570px;
     width: 100%;
-    background: url(../assets/googleOakland.png) no-repeat 50% 50%;
 }
 
 #googleMapAlt {
@@ -203,17 +202,17 @@ figcaption {
 }
 
 .profileDescription{
-	color:#585858;
+	color: #585858;
 	font-size: .8em;	
-	margin:10px;
-	margin-left:0px;
-	margin-top:5px;
+	margin: 10px;
+	margin-left: 0px;
+	margin-top: 5px;
 }
 
 
 .description{
-	width:260px;
-	float:right;
+	width: 260px;
+	float: right;
 }
 
 .outer3Grid{
@@ -225,8 +224,9 @@ figcaption {
 }
 
 #infoBoxGrid{
-	top: 90px;
-
+	top: 80px;
+    position: absolute;
+    height: 
 }
 
 #photosGrid{
