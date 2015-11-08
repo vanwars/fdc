@@ -157,11 +157,12 @@ figcaption {
     background: url(../assets/googleOakland.png) no-repeat 50% 50%;
 }
 
-.infoBox{
+.infoBox {
 	float: left;
-    padding: 20px;
-    height: 120px;
+    margin: 20px;
     width: 380px;
+    height: 512px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 #infoBoxHeader{
@@ -174,7 +175,6 @@ figcaption {
     display: block;
 	width: 100%;
 	height: 120px;
-	background-color: rgba(255, 255, 255, 0.9);
 	border-bottom-width: 1px;
 	border-bottom-color: #f0f0f0;
 	border-bottom-style: solid;
@@ -193,7 +193,7 @@ figcaption {
 	width: 120px;
 }
 
-.name{
+.name {
 	color:#585858;
 	font-size: 1em;
 	margin:15px;
@@ -228,7 +228,6 @@ figcaption {
 	top: 70px;
     position: absolute;
     height: 520px;
-    overflow-y: auto;
 }
 
 #photosGrid{
@@ -272,11 +271,6 @@ figcaption {
 }
 
 
-#foodInfo{
-	height:484;
-	background-color: white;
-	border:none;
-}
 
 #detail{
 	margin-right:130px;

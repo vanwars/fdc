@@ -69,22 +69,15 @@ define(["jquery", "marionette", "mapbox-lib"],
                 });
             },
             markerClick: function (e) {
-                alert("Click");
-                var $div = $(e.originalEvent.srcElement),
-                    id = e.layer.feature.properties.id,
-                    route = "#/detail/" + id,
+                var id = e.layer.feature.properties.id,
+                    route = "#/item/" + id,
                     latLng = e.layer.getLatLng();
 
-                // 1. show active map icon:
-                $(".sprite").removeClass("active");
-                $div.addClass("active");
-                $("body.section-0 #map").css({ opacity: 1 });
-
-                // 2. load panel:
+                // load route:
                 window.location.hash = route;
 
-                // 3. pan map:
-                this.map.setView([latLng.lat, latLng.lng], 16);
+                // pan map:
+                this.map.setView([latLng.lat, latLng.lng], this.map.getZoom());
             }
         });
         return MapboxView;

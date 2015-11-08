@@ -8,6 +8,17 @@ define(["handlebars"],
             return false;
         });
 
+        Handlebars.registerHelper('truncate', function (str, numChars) {
+            if (str.length > numChars && str.length > 0) {
+                var new_str = str + " ";
+                new_str = str.substr(0, numChars);
+                new_str = str.substr(0, new_str.lastIndexOf(" "));
+                new_str = (new_str.length > 0) ? new_str : str.substr(0, numChars);
+                return new Handlebars.SafeString(new_str + '...');
+            }
+            return str;
+        });
+
         Handlebars.registerHelper("hexToRgb", function (hex, opacity) {
             var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
             result = result ? {

@@ -32,14 +32,14 @@ var pages = [
         dataset: "oakland"
     },
     {
-        url: "store/:id",
+        url: "item/:id",
         template_path: "place-detail.html",
         region: '#infoBoxGrid',
         type: "detail",
         dataset: "oakland"
     },
     {
-        url: "store/:id",
+        url: "item/:id",
         template_path: "place-photos.html",
         region: '#photosGrid',
         type: "detail",

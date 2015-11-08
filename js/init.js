@@ -118,6 +118,7 @@ define(["underscore",
                 if (page.region) {
                     page.region = page.region.replace(":id", arg1);
                 }
+                //page.view.$el.hide();
                 $(page.region || this.defaultRegion).html(page.view.el);
                 page.view.delegateEvents();
             },
