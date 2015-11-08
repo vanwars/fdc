@@ -40,6 +40,7 @@ h4{
     font-weight: 400;
     margin: 0px;
     line-height: 40px;
+
 }
 
 h5{
@@ -52,7 +53,10 @@ h5{
 img {
     width: 100%;
     height: auto;
-    width: auto;
+}
+
+#titleCaption{
+	margin-bottom: 70px;
 }
 
 
@@ -60,13 +64,15 @@ img {
 	height: 400px;
     width: 100%;
     background: url(../assets/googleOaklandBlur.png) no-repeat 50% 50%;
+    margin-bottom: 40px;
 }
 
 h1 { 
    font-family: 'Montserrat', sans-serif;
-   font-weight: 400;
+   font-weight: 700;
    color: white; 
    font-size: 4em;
+   margin-bottom:20px;
 }
 
 
@@ -77,7 +83,7 @@ p {
 }
 
 .overlay {  
-    background: rgba(20, 10, 10, .3);
+    background: rgba(10, 20, 30, .3);
     text-align: center;
     width: 100%;
     height: 100%; 
@@ -146,7 +152,7 @@ figcaption {
 }
 
 #googleMapAlt {
-	height: 650px;
+	height: 630px;
     width: 100%;
     background: url(../assets/googleOakland.png) no-repeat 50% 50%;
 }
@@ -306,6 +312,7 @@ figcaption {
 	font-size: .8em;
 	height:30px;
 	padding:5px;
+	border:1px solid #dbdbdb;
 }
 
 #navbarSearch{
@@ -377,3 +384,5 @@ input#search-button{
 	width:auto;
 	padding:10px;
 }
+
+
