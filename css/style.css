@@ -223,10 +223,11 @@ figcaption {
 	margin-right:auto;
 }
 
-#infoBoxGrid{
-	top: 80px;
+#infoBoxGrid {
+	top: 70px;
     position: absolute;
-    height: 
+    height: 520px;
+    overflow-y: auto;
 }
 
 #photosGrid{
@@ -358,7 +359,6 @@ input#search-button{
 
 .infoGrid {
     left: 0px;
-    right: 0px;
     margin-left: auto;
     margin-right: auto;
 

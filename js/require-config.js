@@ -8,7 +8,7 @@ require.config({
         'text': 'external/text',
         'marionette': 'external/backbone.marionette',
         'underscore': 'external/underscore-min',
-        'mapbox-lib': '//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox'
+        'mapbox-lib': '//api.mapbox.com/mapbox.js/v2.2.3/mapbox'
     },
     shim: {
         'underscore': {

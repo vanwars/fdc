@@ -15,7 +15,7 @@ define(["underscore",
         var App = new Marionette.Application();
         _.extend(App, {
             datasets: {},
-            pages: {},
+            routePageMap: {},
             routes: {},
             appRouter: null,
             defaultRegion: '.section-content',
@@ -83,27 +83,43 @@ define(["underscore",
                 /* Dynamically builds Backbone Routes from the config file */
                 _.each(pages, function (page) {
                     page.vent = that.vent;
-                    that.pages[page.url] = page;
-                    if (page.type == "detail") {
-                        page.modelID = page.id;
+                    if (!that.routePageMap[page.url]) {
+                        that.routePageMap[page.url] = [];
                     }
-                    that.routes[page.url] = function (modelID) {
-                        if (modelID) { page.modelID = modelID; }
-                        if (page.template_path) {
-                            that.loadView(page, modelID);
-                        }
-                        that.executeTransition(page);
+                    that.routePageMap[page.url].push(page);
+
+                    // Note: more than one page can be loaded per route.
+                    // Uses the "routePageMap," which associates each route
+                    // with a list of pages:
+                    that.routes[page.url] = function (arg1, arg2, arg3) {
+                        _.each(that.routePageMap[page.url], function (p) {
+                            if (p.type == "detail") {
+                                try {
+                                    p.modelID = parseInt(arg1, 10);
+                                } catch (e) {
+                                    console.log("Error: " + e);
+                                }
+                            }
+                            that.loadView(p, arg1, arg2, arg3);
+                            that.executeTransition(p);
+                        });
                     };
                 });
             },
 
-            loadView: function (page, id) {
-                if (id) { page.modelID = id; }
-                var View = this.getView(page),
-                    view = new View(page),
-                    region = page.region.replace(":id", id);
-                $(region || this.defaultRegion).html(view.el);
-                view.delegateEvents();
+            loadView: function (page, arg1, arg2, arg3) {
+                page.args = [arg1, arg2, arg3];
+                // Caches the view by attaching the view object to the page.
+                // Not yet sure if this is a good idea:
+                if (!page.view) {
+                    var View = this.getView(page);
+                    page.view = new View(page);
+                }
+                if (page.region) {
+                    page.region = page.region.replace(":id", arg1);
+                }
+                $(page.region || this.defaultRegion).html(page.view.el);
+                page.view.delegateEvents();
             },
 
             applyRoutingHacks: function () {
@@ -130,9 +146,6 @@ define(["underscore",
             });
             this.appRouter = new AppRouter();
             Backbone.history.start();
-            $(document).ready(function () {
-                initialize();
-            });
             this.applyRoutingHacks();
         });
         return App;
