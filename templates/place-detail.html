@@ -1,28 +1,11 @@
-<h3>{{ name }}</h3>
+<div class="infoBox">
+    <div class="infoBoxHeader"><h4>Kasey, Chinatown</h4></div>
+    <div class="storyProfile" id="foodInfo">
+        <img class="profilePic" id="detail" src="assets/profileImg.png" ></img>
+        <h2 id="infoTitle">{{ name }}</h2>
+        <p class ="foodDescription">{{ description }}</p>
+    </div>		
+</div>
 
-{{#if children}}
-    <img src="{{ children.photos.data.[0].path_large }}" />
-{{/if}}
 
-<p>{{ description }}</p>
-
-{{#if extras.source }}
-    <p>
-        <small>
-            <a href="{{ extras.source }}" target="_blank">Source</a>
-        </small>
-    </p>
-{{/if}}
-
-{{#if extras.video }}
-    <div class="videoWrapper">
-        <iframe width="560" height="315" src="{{ extras.video }}" frameborder="0" allowfullscreen=""></iframe>
-    </div>
-{{/if}}
-
-{{#each children.audio.data}}
-    <hr>
-    <p>{{this.description}}</p>
-    <audio id="audio-player" src="{{this.file_path}}" controls="controls"></audio>
-{{/each}}
 

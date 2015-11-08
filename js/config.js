@@ -30,5 +30,19 @@ var pages = [
         region: '#infoBoxGrid',
         type: "list",
         dataset: "oakland"
+    },
+    {
+        url: "store/:id",
+        template_path: "place-detail.html",
+        region: '#infoBoxGrid',
+        type: "detail",
+        dataset: "oakland"
+    },
+    {
+        url: "store/:id",
+        template_path: "place-photos.html",
+        region: '#photosGrid',
+        type: "detail",
+        dataset: "oakland"
     }
 ];

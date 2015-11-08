@@ -111,7 +111,7 @@ define(["underscore",
                 page.args = [arg1, arg2, arg3];
                 // Caches the view by attaching the view object to the page.
                 // Not yet sure if this is a good idea:
-                if (!page.view) {
+                if (!page.view || page.type == "detail") {
                     var View = this.getView(page);
                     page.view = new View(page);
                 }

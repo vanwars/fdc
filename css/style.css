@@ -148,6 +148,7 @@ figcaption {
 #map {
 	height: 570px;
     width: 100%;
+    background-color: #EEE;
 }
 
 #googleMapAlt {
