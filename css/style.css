@@ -189,8 +189,8 @@ figcaption {
 }
 
 .profilePic {
-	height: 120px;
-	width: 120px;
+	height: 100px;
+	width: 100px;
 }
 
 .name{
@@ -260,7 +260,7 @@ figcaption {
 #submitStoryButton{
 	left:0;
 	right:0;
-	width:300px;
+	width:220px;
 	margin: 0 auto;
 	background-color: #3DBEC0;
 	text-align: center;
@@ -277,8 +277,8 @@ figcaption {
 }
 
 #detail{
-	margin-right:130px;
-	margin-left:130px;
+	margin-right:140px;
+	margin-left:140px;
 	margin-top:30px;
 	margin-bottom: 20px
 }
@@ -329,8 +329,9 @@ figcaption {
 }
 
 #socialMediaIcons{
-	width:300px;
+	width:100px;
 	top:880px;
+	padding:10px;
 }
 
 
@@ -373,7 +374,7 @@ input#search-button{
 
 #foodInfoAlt{
 	background-color:rgba(255, 255, 255, .85);
-	height:550px;
+	height:450px;
     width:380px;
  	overflow:auto;
 }
