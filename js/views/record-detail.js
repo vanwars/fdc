@@ -7,7 +7,9 @@ define(["underscore", "marionette", "views/view-mixin"],
                 'change': 'render'
             },
             initialize: function (opts) {
+                console.log("initialize-detail");
                 var that = this;
+                this.$el.empty();
                 _.extend(this, opts);
                 this.model.fetch({
                     success: function () {
@@ -15,7 +17,7 @@ define(["underscore", "marionette", "views/view-mixin"],
                         that.render();
                     }
                 });
-                this.render();
+                //this.render();
             }
         });
         _.extend(RecordView.prototype, ViewMixin);
