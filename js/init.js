@@ -43,7 +43,10 @@ define(["underscore",
                     this.attachModelFromDataset(page);
                     return RecordDetailView.extend(page);
                 case "mapbox":
-                    this.attachDataset(page);
+                    //dataset optional:
+                    if (page.dataset) {
+                        this.attachDataset(page);
+                    }
                     return MapboxView.extend(page);
                 default:
                     return BaseView.extend(page);

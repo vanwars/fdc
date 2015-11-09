@@ -7,14 +7,13 @@ define(["jquery", "marionette", "mapbox-lib"],
             initialized: false,
             layer: null,
             initialize: function (opts) {
-                this.collection = opts.collection;
-
-                //initialize map:
+                // optional dataset:
+                if (opts.collection) {
+                    this.collection = opts.collection;
+                    this.collection.fetch({ reset: true });
+                    this.listenTo(this.collection, 'reset', this.renderMarkers);
+                }
                 this.initMap();
-
-                //get data
-                this.collection.fetch({ reset: true });
-                this.listenTo(this.collection, 'reset', this.renderMarkers);
             },
             initMap: function () {
                 //initialize the map:
@@ -22,8 +21,8 @@ define(["jquery", "marionette", "mapbox-lib"],
                     console.log("map already initialized");
                     return;
                 }
-                L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg';
-                this.map = L.mapbox.map('map', 'laurenbenichou.54e91cf8', {
+                L.mapbox.accessToken = this.accessToken;
+                this.map = L.mapbox.map('map', this.styleID, {
                     zoomControl: false
                 }).setView([37.812, -122.294], 13);
                 this.map.scrollWheelZoom.disable();
@@ -47,7 +46,7 @@ define(["jquery", "marionette", "mapbox-lib"],
                     //add icon:
                     _.extend(properties, {
                         "marker-color": marker.get("color"),
-                        "marker-symbol": "restaurant",
+                        "marker-symbol": that.markerSymbol || "",
                         "marker-size": "large"
                     });
 
