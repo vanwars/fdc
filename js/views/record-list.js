@@ -18,7 +18,6 @@ define(["jquery",
             childViewContainer: '.data-container',
 
             initialize: function (opts) {
-                console.log(opts);
                 this.collection = opts.collection;
                 this.listenTo(this.collection, 'reset', this.renderWithHelpers);
                 //this.listenTo(this.collection, 'change', this.renderWithHelpers);
@@ -41,7 +40,6 @@ define(["jquery",
                             template: Handlebars.compile(ItemTemplatePath)
                         });
                         that.template = Handlebars.compile(CollectionTemplatePath);
-                        console.log(that.template);
                         that.collection.fetch({reset: true});
                     });
             },

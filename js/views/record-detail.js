@@ -7,17 +7,22 @@ define(["underscore", "marionette", "views/view-mixin"],
                 'change': 'render'
             },
             initialize: function (opts) {
-                console.log("initialize-detail");
                 var that = this;
-                this.$el.empty();
                 _.extend(this, opts);
+                if (this.model.isFetched) {
+                    //used cached model:
+                    _.extend(that.extras, that.model.toJSON());
+                    that.render();
+                    return;
+                }
+                // go get the data from the server: 
                 this.model.fetch({
                     success: function () {
+                        that.model.isFetched = true;
                         _.extend(that.extras, that.model.toJSON());
                         that.render();
                     }
                 });
-                //this.render();
             }
         });
         _.extend(RecordView.prototype, ViewMixin);
