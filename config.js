@@ -16,7 +16,6 @@ var datasets = {
 };
 var pages = [
     {
-        url: "places/oakland",
         type: "mapbox",
         accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
         mapStyleID: "laurenbenichou.54e91cf8",

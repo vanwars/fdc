@@ -15,7 +15,7 @@ define(["underscore", "marionette", "views/view-mixin"],
                     that.render();
                     return;
                 }
-                // go get the data from the server: 
+                // go get the data from the server:
                 this.model.fetch({
                     success: function () {
                         that.model.isFetched = true;

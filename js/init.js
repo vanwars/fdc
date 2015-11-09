@@ -74,7 +74,7 @@ define(["underscore",
                 }
                 var dataset = this.datasets[page.dataset];
                 page.model = dataset.collection.get(page.modelID);
-                if (!page.model) { page.model = new Model(); }
+                if (!page.model) { page.model = new Model({ id: page.modelID }); }
                 page.model.urlRoot = dataset.api_endpoint;
             },
 
