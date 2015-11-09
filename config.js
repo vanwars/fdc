@@ -34,12 +34,5 @@ var pages = [
         region: '#infoBoxGrid',
         type: "detail",
         dataset: "all"
-    },
-    {
-        url: "places/:id",
-        template_path: "place-photos.html",
-        region: '#photosGrid',
-        type: "detail",
-        dataset: "all"
     }
 ];

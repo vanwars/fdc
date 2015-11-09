@@ -203,7 +203,8 @@ figcaption {
 .storyProfile {
     display: block;
 	width: 100%;
-	height: 120px;
+	height: 460px;
+    overflow-y: auto;
 	border-bottom-width: 1px;
 	border-bottom-color: #f0f0f0;
 	border-bottom-style: solid;
