@@ -1,3 +1,3 @@
 ## YR Five Dollar Challenge
 
-This code is being created for YR. Design by Ellen. 
+Step 1: Connecting the HTML to Mapbox 
