@@ -391,4 +391,11 @@ input#search-button{
 	padding:10px;
 }
 
+.overviewImages {
+	width: calc(50% - 16px);
+	height: auto;
+	margin: 8px;
+	float: left;
+}
+
 
