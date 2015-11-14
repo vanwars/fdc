@@ -158,12 +158,9 @@ figcaption {
 }
 
 .infoBox {
-	float: left;
-    margin: 20px;
-    width: 380px;
-    height: 510px;
-    top: 70px;
-    position: absolute;
+    float: left;
+    padding: 0;
+    width: 40%;
     background-color: rgba(255, 255, 255, 0.9);
 }
 .infoBox > div {
@@ -318,6 +315,11 @@ figcaption {
 	margin-bottom: 30px
 }
 
+.foodCaption {
+    color: #757575;
+    font-size: .8em;
+}
+
 
 #logo{
 	height:40px;
@@ -352,6 +354,12 @@ figcaption {
 	top:880px;
 }
 
+.infoGrid {
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 input#search-button{
 	background-color:#856277;
