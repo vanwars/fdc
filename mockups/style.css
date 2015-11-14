@@ -398,6 +398,7 @@ input#search-button{
 	height:auto;
 	margin:8px;
 	float:left;
+    text-decoration: none;
 }
 
 .foodCaption{
