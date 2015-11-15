@@ -2,12 +2,12 @@ var datasets = {
     all: {
         api_endpoint: 'http://dev.localground.org/api/0/markers/',
         page_size: 50,
-        filter: "WHERE project = 24"
+        filter_text: "WHERE project = 24"
     },
     oakland: {
         api_endpoint: 'http://dev.localground.org/api/0/markers/',
         page_size: 50,
-        filter: "WHERE project = 24 and tags = 'oakland'"
+        filter_text: "WHERE project = 24 and tags = 'oakland'"
     }
 };
 var pages = [
@@ -26,7 +26,7 @@ var pages = [
         region: '#infoBoxGrid',
         type: "list",
         dataset: "oakland",
-        filter: "WHERE project = 24 and tags = ':city'" /* Todo: move filters back to list + param substitution */
+        filter_text: "WHERE project = 24 and tags = ':city'" /* Todo: move filters back to list + param substitution */
     },
     {
         url: "places/:id",
