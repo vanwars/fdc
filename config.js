@@ -5,8 +5,12 @@ var datasets = {
         server_query: "WHERE project = 24"
     }
 };
-var pages = [
-    {
+var pages = {
+    navbar: {
+        template_path: "search-form.html",
+        region: '#navBar'
+    },
+    map: {
         type: "mapbox",
         accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
         styleID: "laurenbenichou.54e91cf8",
@@ -14,7 +18,7 @@ var pages = [
         dataset: "fdc_data",
         clickRoute: "places"
     },
-    {
+    foodListPage: {
         type: "list",
         url: "regions/:city",
         collection_template_path: "place-list.html",
@@ -23,14 +27,14 @@ var pages = [
         dataset: "fdc_data",
         client_query: "WHERE tags contains :city"
     },
-    {
+    foodDetailPage: {
         type: "detail",
         url: "places/:id",
         template_path: "place-detail.html",
         region: '#infoBoxGrid',
-        dataset: "fdc_data",
+        dataset: "fdc_data" /*,
         onLoad: function () {
-            pages[0].view.centerMap();
-        }
+            pages.map.view.centerMap();
+        }*/
     }
-];
+};

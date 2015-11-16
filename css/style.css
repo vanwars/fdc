@@ -198,6 +198,7 @@ figcaption {
 	width: 100%;
 	background-color: #3DBEC0;
 	color: white;
+    text-transform: uppercase;
 }
 
 .storyProfile {
@@ -330,6 +331,7 @@ figcaption {
 	font-weight: 400;
 	font-size: .8em;
 	height:30px;
+    width: 400px;
 	padding:5px;
 	border:1px solid #dbdbdb;
 }

@@ -1,0 +1,13 @@
+<h2>Youth Radio <img src="assets/logo.png" id="logo"></h2>
+<form id="fixedNavSearch">
+    <input type="text" name="location" id="location" class="searchBox"  id="navbarSearch" placeholder="Where would you like to search?">
+    <input type="submit" id="search-button" value="Submit"></input>
+</form>
+<script>
+    $("#search-button").click(function (e) {
+        window.location.hash = "#/regions/" + $("#location").val();
+        e.preventDefault();
+        /* Add this to post-render */
+        //pages.map.view.fitMapToLayer();
+    });
+</script>
