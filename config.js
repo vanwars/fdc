@@ -5,36 +5,55 @@ var datasets = {
         server_query: "WHERE project = 24"
     }
 };
+
 var pages = {
-    navbar: {
-        template_path: "search-form.html",
-        region: '#navBar'
+    splash: {
+        url: "",
+        template_path: "splash.html",
+        region: '#splash',
+        postRender: doSearch,
+        transition: showSplash
     },
     map: {
         type: "mapbox",
         accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
         styleID: "laurenbenichou.54e91cf8",
-        markerSymbol: "restaurant", /* https://www.mapbox.com/maki/ */
+        markerSymbol: "restaurant", /* Look here for more icons: https://www.mapbox.com/maki/ */
         dataset: "fdc_data",
         clickRoute: "places"
     },
-    foodListPage: {
+    navbar: {
+        url: "regions/",
+        template_path: "search-form.html",
+        region: '#topSearch'
+    },
+    foodList: {
+        type: "list",
+        url: "regions/",
+        collection_template_path: "place-list.html",
+        item_template_path: "place-item.html",
+        region: '#infoBoxGrid',
+        dataset: "fdc_data",
+        transition: hideSplash
+    },
+
+    cityFoodList: {
         type: "list",
         url: "regions/:city",
         collection_template_path: "place-list.html",
         item_template_path: "place-item.html",
         region: '#infoBoxGrid',
         dataset: "fdc_data",
-        client_query: "WHERE tags contains :city"
+        client_query: "WHERE tags contains :city",
+        transition: hideSplash
     },
+
     foodDetailPage: {
         type: "detail",
         url: "places/:id",
         template_path: "place-detail.html",
         region: '#infoBoxGrid',
-        dataset: "fdc_data" /*,
-        onLoad: function () {
-            pages.map.view.centerMap();
-        }*/
+        dataset: "fdc_data",
+        transition: hideSplash
     }
 };

@@ -82,16 +82,16 @@ p {
     color: white;
 }
 
-.overlay {  
-    background: rgba(10, 20, 30, .3);
+.splash {
+    position: absolute;
+	top: 60px;  
+    background: rgba(34,34,34,0.45);
     text-align: center;
     width: 100%;
-    height: 100%; 
+    height: 570px;
 }
 
 #titleText{
-	position: absolute; 
-	top: 80px; 
 	width: 760px;
 	left: 0;
 	right: 0;
@@ -108,7 +108,7 @@ p {
     margin-right: 12px
 }
 
-#fixedNavSearch {
+.fixedNavSearch {
     float: right;
     margin: 10px;
     margin-right: 90px;
@@ -194,7 +194,7 @@ figcaption {
     to   { opacity: 1; }
 }
 
-#infoBoxHeader{
+.infoBoxHeader{
 	width: 100%;
 	background-color: #3DBEC0;
 	color: white;
@@ -256,6 +256,11 @@ figcaption {
 
 #photosGrid{
 	margin-top: 50px;
+}
+
+#topSearch {
+    display: inline-block;
+    float:right
 }
 
 .inner3Grid{
@@ -320,7 +325,7 @@ figcaption {
 }
 
 
-#logo{
+.logo{
 	height:40px;
 	width:40px;
 	vertical-align:middle;
@@ -355,7 +360,7 @@ figcaption {
 }
 
 
-input#search-button{
+input.search-button{
 	background-color:#856277;
 	display:inline-block;
 	cursor:pointer;
