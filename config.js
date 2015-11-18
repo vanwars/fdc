@@ -11,7 +11,7 @@ var pages = {
         url: "",
         template_path: "splash.html",
         region: '#splash',
-        postRender: doSearch,
+        postRender: addSearchEventHandler,
         transition: showSplash
     },
     map: {
@@ -23,13 +23,13 @@ var pages = {
         clickRoute: "places"
     },
     navbar: {
-        url: "regions/",
+        //urls: ["regions/", "regions/:city"],
         template_path: "search-form.html",
         region: '#topSearch'
     },
     foodList: {
         type: "list",
-        url: "regions/",
+        urls: ["regions/", "regions/all"],
         collection_template_path: "place-list.html",
         item_template_path: "place-item.html",
         region: '#infoBoxGrid',

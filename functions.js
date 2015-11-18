@@ -1,8 +1,7 @@
-location.hash = '';
+location.hash = ''; //make sure the page initializes on the first page...
 
-var doSearch = function() {
+var addSearchEventHandler = function() {
     $(".search-button").click(function (e) {
-        //alert("search");
         var text = $(this).prev().val();
         window.location.hash = "#/regions/" + text;
         $(".search-button").prev().val(text);
