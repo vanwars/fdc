@@ -99,6 +99,7 @@ p {
 	margin-right:auto;
 	text-align: center;
 	padding-bottom: 50px;
+    margin-top: 30px;
 }
 
 #fixedNav {
@@ -200,6 +201,10 @@ figcaption {
 	color: white;
     text-transform: uppercase;
 }
+.data-container {
+    overflow-y: auto;
+    height: 460px;
+}
 
 .storyProfile {
     display: block;
@@ -234,7 +239,6 @@ figcaption {
 
 .profileDescription{
 	color: #585858;
-	font-size: .8em;	
 	margin: 10px;
 	margin-left: 0px;
 	margin-top: 5px;
@@ -360,18 +364,16 @@ figcaption {
 }
 
 
-input.search-button{
-	background-color:#856277;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:.8em;
-	height:30px;
-	text-decoration:none;
+input.search-button {
+	background-color: #856277;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	text-decoration: none;
 	border-style: none;
 	font-family: 'Montserrat', sans-serif;
-    margin: -4px;
+    margin: -10px 0px 0px -4px;
 }
 
 .myButton:hover {
@@ -398,3 +400,8 @@ input.search-button{
 	padding:10px;
 }
 
+input.location, input.search-button, input {
+    height: 40px;
+    line-height: 30px;
+    border-radius: 0px;
+}

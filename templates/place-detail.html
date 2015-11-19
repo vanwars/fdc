@@ -1,13 +1,33 @@
 <div class="infoBoxHeader">
     <a href="#/regions/{{tags}}"><img src="assets/backArrow.png" id="backArrow" /></a>
-    <h4>{{ extras.username }}</h4>
+    <h4>
+        {{#if extras.username }}{{ extras.username }} {{ else }} User Name {{/if}}
+    </h4>
 </div>
 
 <div class="storyProfile" id="foodInfoAlt">
     <img class="profilePic" id="detail" src="assets/profileImg.png" ></img>
     <h2 id="infoTitle">{{ name }}</h2>
     <p class ="foodDescription">{{ description }}</p>
-    {{#each children.photos.data}}
-        <div class="inner3Grid"><img src="{{this.path_medium}}" class="profileImagesAlt" /></div>
-    {{/each}}
+
+    <div id="myCarousel" class="carousel slide">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            {{#each children.photos.data}}
+            <div class="item">
+                <img src="{{this.path_medium}}" class="profileImagesAlt" />
+            </div>
+            {{/each}}
+        </div>
+        <!-- Carousel Arrows -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+    
+    <!-- Lower Navigation -->
+    <ol class="carousel-linked-nav pagination">
+        <li class="active"><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
+        <li><a href="#3">3</a></li>
+    </ol>   
 </div>

@@ -54,6 +54,7 @@ var pages = {
         template_path: "place-detail.html",
         region: '#infoBoxGrid',
         dataset: "fdc_data",
-        transition: hideSplash
+        transition: hideSplash,
+        postRender: initCarousel
     }
 };
