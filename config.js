@@ -14,13 +14,16 @@ var pages = {
         postRender: addSearchEventHandler,
         transition: showSplash
     },
-    map: {
+    map_box: {
         type: "mapbox",
         accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
         styleID: "laurenbenichou.54e91cf8",
         markerSymbol: "restaurant", /* Look here for more icons: https://www.mapbox.com/maki/ */
         dataset: "fdc_data",
-        clickRoute: "places"
+        clickRoute: "places",
+        postRender: function () {
+            pages.map_box.view.map.fitBounds(pages.map_box.view.layer.getBounds());
+        }
     },
     navbar: {
         //urls: ["regions/", "regions/:city"],

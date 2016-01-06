@@ -51,7 +51,7 @@ h5{
 
 
 img {
-    width: 100%;
+    /*width: 100%;*/
     height: auto;
 }
 
@@ -225,7 +225,6 @@ figcaption {
 
 .profilePic {
 	height: 120px;
-	width: 120px;
 }
 
 .name {
@@ -303,13 +302,12 @@ figcaption {
 	margin-bottom:20px;
 }
 
-
-
-#detail{
-	margin-right:130px;
-	margin-left:130px;
-	margin-top:30px;
-	margin-bottom: 20px
+#detail {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 #infoTitle{

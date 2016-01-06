@@ -1,12 +1,20 @@
 <div class="infoBoxHeader">
-    <a href="#/regions/{{tags}}"><img src="assets/backArrow.png" id="backArrow" /></a>
+    <a href="#" onclick="window.history.back();return false;">
+        <img src="assets/backArrow.png" id="backArrow" />
+    </a>
     <h4>
         {{#if extras.username }}{{ extras.username }} {{ else }} User Name {{/if}}
     </h4>
 </div>
 
 <div class="storyProfile" id="foodInfoAlt">
-    <img class="profilePic" id="detail" src="assets/profileImg.png" ></img>
+    <!-- Loop through to see if any of the photos have been tagged as a "profile" pic -->
+    {{#each children.photos.data}}
+        {{#ifequal this.tags "profile"}}
+            <img class="profilePic" id="detail" src="{{this.path_medium}}" />
+        {{/ifequal}}
+    {{/each}}
+    
     <h2 id="infoTitle">{{ name }}</h2>
     <p class ="foodDescription">{{ description }}</p>
 
@@ -14,20 +22,17 @@
         <!-- Carousel items -->
         <div class="carousel-inner">
             {{#each children.photos.data}}
-            <div class="item">
-                <img src="{{this.path_medium}}" class="profileImagesAlt" />
-            </div>
+                {{#ifequal this.tags "profile"}}
+                    <!-- don't show -->
+                {{else}}
+                <div class="item">
+                    <img src="{{this.path_medium}}" class="profileImagesAlt" />
+                </div>
+                {{/ifequal}}
             {{/each}}
         </div>
         <!-- Carousel Arrows -->
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div>
-    
-    <!-- Lower Navigation -->
-    <ol class="carousel-linked-nav pagination">
-        <li class="active"><a href="#1">1</a></li>
-        <li><a href="#2">2</a></li>
-        <li><a href="#3">3</a></li>
-    </ol>   
+    </div>  
 </div>
