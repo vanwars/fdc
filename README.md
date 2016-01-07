@@ -12,7 +12,10 @@ This code is used in conjunction with the first version of the [Local Ground Web
 5. A css directory of styles
 6. An assets directory of static images
 
-In order for the Five Dollar Challenge website to work with the wdk, the following needs to be included at the bottom of index.html:
+## Getting this Code Running
+In order for the Five Dollar Challenge website to work with the wdk, three things need to happen:
+
+1. The following needs to be included at the bottom of index.html:
 
 ```HTML
 <script src="http://code510.org/wdk/js/external/require.js"></script>
@@ -28,7 +31,8 @@ In order for the Five Dollar Challenge website to work with the wdk, the followi
 </script>
 ```
 
-In addition, the config file needs to be configured according to the wdk configuration file specification. The spec has been preliminarily documented below.
+2. The config file needs to be configured according to the wdk configuration file specification (documented in the section below).
+3. The site needs to be viewed on a **server** (e.g. http://something.org/index.html; http://localhost/index.html); not locally (e.g. file:///your_folder/index.html).
 
 
 ## WDK Config File Documentation
