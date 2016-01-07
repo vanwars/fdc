@@ -46,13 +46,11 @@ Each dataset entry consists of a key -- an an arbitrary dataset name that you ma
 ### Page Dictionary Entry
 Each page entry consists of a key -- an arbitrary page name that you make up (e.g. "splash") -- and several properties:
 
-1. **type** (string, optional, default value: "basic"):<br> 
-   specifies the type of page to load. Valid values are:
+1. **type** (string, optional, default value: "basic"):<br>specifies the type of page to load. Valid values are:
   * **mapbox**: loads a mapbox map
   * **list**: loads in a list of data from an API endpoint
   * **detail**: loads a single data entry (from an API endpoint)
   * **basic**: Just loads a plain HTML template
-
 2. **url** (string, optional): specifies that the snippet will only load if the url specified is called. If no url is specified, the page loads right away
 3. **urls** (list, optional): if you want the same page to load for multiple urls.
 4. **template_path** (string, required for "basic" and "detail" types): specifies the location of the HTML template, which is located in the "templates" directory
@@ -69,12 +67,10 @@ There are also some additional configuration options that are type-specific:
   * **markerSymbol**: TBD...still being extended to accommodate custom symbols
   * **dataset**: the datasource for the markers.
   * **clickRoute**: when you click a marker, what url route to load.
-
 2. **type: "list"**
   * **dataset**: the datasource for the list of data.
   * **collection_template_path**: the template that holds the entire list (see "place-list.html" for more details)
   * **item_template_path**: the template that holds each individual entry (see "place-item.html" for more details). Note the variable substitution notation, which corresponds to the dataset returned by the API endpoint
-
 3. **type: "detail"**
   * **dataset**: the datasource for the list of data.
   * **url**: special convention: uses the :id parameter to specify which id, specifically, will be queried by the endpoint. See the "foodDetailPage" below
