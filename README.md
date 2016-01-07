@@ -45,6 +45,7 @@ Each dataset entry consists of a key -- an an arbitrary dataset name that you ma
 
 ### Page Dictionary Entry
 Each page entry consists of a key -- an arbitrary page name that you make up (e.g. "splash") -- and several properties:
+
 1. type (string, optional): specifies the type of page to load. Valid values are:
   * "mapbox": loads a mapbox map
   * "list": loads in a list of data from an API endpoint
@@ -66,19 +67,12 @@ There are also some additional configuration options that are type-specific:
   * markerSymbol: TBD...still being extended to accommodate custom symbols
   * dataset: the datasource for the markers.
   * clickRoute: when you click a marker, what url route to load.
- *
 
 2. type: "list"
- *           i.   dataset: the datasource for the list of data.
- *           ii.  collection_template_path: the template that holds the entire list
- *                (see "place-list.html" for more details)
- *           iii. item_template_path: the template that holds each individual entry
- *                (see "place-item.html" for more details). Note the variable substitution
- *                notation, which corresponds to the dataset returned by the API endpoint
- *
- *       (c) type: "detail"
- *           i.   dataset: the datasource for the list of data.
- *           ii.  url: special convention: uses the :id parameter to specify which id,
- *                specifically, will be queried by the endpoint. See the "foodDetailPage"
- *                below
- */
+  * dataset: the datasource for the list of data.
+  * collection_template_path: the template that holds the entire list (see "place-list.html" for more details)
+  * item_template_path: the template that holds each individual entry (see "place-item.html" for more details). Note the variable substitution notation, which corresponds to the dataset returned by the API endpoint
+
+3. type: "detail"
+  * dataset: the datasource for the list of data.
+  * url: special convention: uses the :id parameter to specify which id, specifically, will be queried by the endpoint. See the "foodDetailPage" below
