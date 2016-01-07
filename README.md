@@ -42,47 +42,33 @@ Each dataset entry consists of a key -- an an arbitrary dataset name that you ma
 1. api_endpoint (string): a URL to the API endpoint to be used.
 2. page_size (integer): The maximum number of entries you would like to return for each query.
 3. server_query (string): The criteria by which you would like to filter your queries.
+
+### Page Dictionary Entry
+Each page entry consists of a key -- an arbitrary page name that you make up (e.g. "splash") -- and several properties:
+1. type (string, optional): specifies the type of page to load. Valid values are:
+  * "mapbox": loads a mapbox map
+  * "list": loads in a list of data from an API endpoint
+  * "detail": loads a single data entry (from an API endpoint)
+  * "basic": Just loads a plain HTML template
+Defaults to "basic" if no additional type is specified.
+2. url (string, optional): specifies that the snippet will only load if the url specified is called. If no url is specified, the page loads right away
+3. urls (list, optional): if you want the same page to load for multiple urls.
+4. template_path (string, required for "basic" and "detail" types): specifies the location of the HTML template, which is located in the "templates" directory
+5. region (css selector string, required for all types except for "mapbox"): specifies where, in the main page (index.html), the template should be injected into. For instance, for the "splash" page (below), the "splash.html" template will be injected into the "#splash" selector (container where id="splash") on the index.html page.
+6. postRender (function, optional): function that gets called after the page loads. All functions must be defined in the functions.js file.
+7. transition (function, optional): function that gets called while the new page is loading; often an animation.
+
+#### Type-Specific Configuration Options
+There are also some additional configuration options that are type-specific:
+1. type: "mapbox"
+  * accessToken: Your mapbox access token.
+  * styleID: Your mapbox style ID
+  * markerSymbol: TBD...still being extended to accommodate custom symbols
+  * dataset: the datasource for the markers.
+  * clickRoute: when you click a marker, what url route to load.
  *
- *     (2) page entry (child of pages)
- *     -------------------------------
- *     Each page entry consists of a key -- an arbitrary page name that you make up
- *     (e.g. "splash") -- and several properties:
- *
- *       (a) type (string, optional): specifies the type of page to load. Valid values are:
- *           - "mapbox": loads a mapbox map
- *           - "list": loads in a list of data from an API endpoint
- *           - "detail": loads a single data entry (from an API endpoint)
- *           - "basic": Just loads a plain HTML template
- *           Defaults to "basic" if no additional type is specified.
- *          
- *       (b) url (string, optional):
- *           specifies that the snippet will only load if
- *           the url specified is called. If no url is specified, the page loads right away
- *       (c) urls (list, optional):
- *           if you want the same page to load for multiple urls.
- *       (d) template_path (string, required for "basic" and "detail" types):
- *           specifies the location of the HTML template, which is located in the "templates"
- *           directory
- *       (e) region (css selector string, required for all types except for "mapbox"):
- *           specifies where, in the main page (index.html), the template should be injected into.
- *           For instance, for the "splash" page (below), the "splash.html" template will be injected
- *           into the "#splash" selector (container where id="splash") on the index.html page.
- *       (f) postRender (function, optional):
- *           function that gets called after the page loads. All functions must be
- *           defined in the functions.js file.
- *       (g) transition (function, optional):
- *           function that gets called while the new page is loading; often an animation.
- *
- *       There are also some additional configuration options that are type-specific:
- *       
- *       (a) type: "mapbox"
- *           i.   accessToken: Your mapbox access token.
- *           ii.  styleID: Your mapbox style ID
- *           iii. markerSymbol: TBD...still being extended to accommodate custom symbols
- *           iv.  dataset: the datasource for the markers.
- *           v.   clickRoute: when you click a marker, what url route to load.
- *
- *       (b) type: "list"
+
+2. type: "list"
  *           i.   dataset: the datasource for the list of data.
  *           ii.  collection_template_path: the template that holds the entire list
  *                (see "place-list.html" for more details)
