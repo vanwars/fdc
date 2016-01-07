@@ -79,7 +79,6 @@
  *                specifically, will be queried by the endpoint. See the "foodDetailPage"
  *                below
  */
-
 var datasets = {
     fdc_data: {
         api_endpoint: 'https://dev.localground.org/api/0/markers/',
