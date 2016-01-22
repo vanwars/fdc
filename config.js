@@ -100,7 +100,9 @@ var pages = {
         styleID: "laurenbenichou.54e91cf8",
         markerSymbol: "restaurant", /* Look here for more icons: https://www.mapbox.com/maki/ */
         dataset: "fdc_data",
-        clickRoute: "places"
+        clickRoute: "places",
+        center: [39.889, -97.114],
+        zoom: 4
     },
     foodDetailPage: {
         type: "detail",
