@@ -83,7 +83,7 @@ var datasets = {
     fdc_data: {
         api_endpoint: 'https://dev.localground.org/api/0/photos/',
         page_size: 150,
-        server_query: "WHERE project = 24 and name like '%grilled cheese%'"
+        server_query: "WHERE project = 33"
     }
 };
 
