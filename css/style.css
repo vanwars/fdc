@@ -13,13 +13,37 @@ body {
 	margin-bottom: 30px;
 }
 
-h2{
-	padding: 10px 15px 9px 20px;
-	margin:0;
-	color: #3dbdbf;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
-	display: inline-block;
+h2 {
+    padding: 8px;
+    margin: 0;
+    color: #203f54;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 1.8em;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+    vertical-align: middle;
+}
+
+a#search-button {
+    background-color: #eb6627;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.8em;
+    text-decoration: none;
+    border-style: none;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin: 7px;
+}
+.map-view {
+    float: right;
 }
 
 h3{
@@ -84,7 +108,7 @@ p {
 
 .splash {
     position: absolute;
-	top: 60px;  
+	top: 56px;  
     background: rgba(34,34,34,0.45);
     text-align: center;
     width: 100%;
@@ -146,9 +170,14 @@ figcaption {
 }
 
 #map {
-	height: 570px;
     width: 100%;
     background-color: #EEE;
+}
+.intro-map {
+    height: 320px;
+}
+.main-map {
+	height: 570px;
 }
 
 #googleMapAlt {
@@ -157,7 +186,7 @@ figcaption {
     background: url(../assets/googleOakland.png) no-repeat 50% 50%;
 }
 
-.infoBox {
+.info-box {
 	float: left;
     margin: 20px;
     width: 380px;
@@ -165,8 +194,9 @@ figcaption {
     top: 70px;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.9);
+    display: none;
 }
-.infoBox > div {
+.info-box > div {
     -webkit-animation: fadein 2s;
        -moz-animation: fadein 2s;
         -ms-animation: fadein 2s;
@@ -194,7 +224,7 @@ figcaption {
     to   { opacity: 1; }
 }
 
-.infoBoxHeader{
+.info-box .header{
 	width: 100%;
 	background-color: #3DBEC0;
 	color: white;
@@ -397,4 +427,11 @@ input.search-button{
 	width:auto;
 	padding:10px;
 }
+
+
+
+/*
+ * New Styles
+ */
+
 

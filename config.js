@@ -92,7 +92,6 @@ var pages = {
         url: "",
         template_path: "splash.html",
         region: '#splash',
-        postRender: addSearchEventHandler,
         transition: showSplash
     },
     map: {
@@ -103,36 +102,11 @@ var pages = {
         dataset: "fdc_data",
         clickRoute: "places"
     },
-    navbar: {
-        template_path: "search-form.html",
-        region: '#topSearch'
-    },
-    foodList: {
-        type: "list",
-        urls: ["regions/", "regions/all"],
-        collection_template_path: "place-list.html",
-        item_template_path: "place-item.html",
-        region: '#infoBoxGrid',
-        dataset: "fdc_data",
-        transition: hideSplash
-    },
-
-    cityFoodList: {
-        type: "list",
-        url: "regions/:city",
-        collection_template_path: "place-list.html",
-        item_template_path: "place-item.html",
-        region: '#infoBoxGrid',
-        dataset: "fdc_data",
-        client_query: "WHERE tags contains :city",
-        transition: hideSplash
-    },
-
     foodDetailPage: {
         type: "detail",
         url: "places/:id",
         template_path: "place-detail.html",
-        region: '#infoBoxGrid',
+        region: '#left-panel',
         dataset: "fdc_data",
         transition: hideSplash
     }

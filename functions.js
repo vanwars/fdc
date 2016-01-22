@@ -20,7 +20,7 @@ var showSplash = function () {
      * Shows the splash page; everything else is greyed out.
      */
     $(".splash").show();
-    $("#topSearch, #infoBoxGrid").hide();
+    $("#topSearch, #left-panel").hide();
 };
 
 var hideSplash = function () {
@@ -28,6 +28,6 @@ var hideSplash = function () {
      * Hides the splash page; users can see the main app
      */
     $(".splash").hide();
-    $("#topSearch, #infoBoxGrid").show();
+    $("#topSearch, #left-panel").show();
 };
 
