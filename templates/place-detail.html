@@ -1,13 +1,9 @@
-<div class="infoBoxHeader">
-    <a href="#/regions/{{tags}}"><img src="assets/backArrow.png" id="backArrow" /></a>
-    <h4>{{ extras.username }}</h4>
+<div class="info-box-header">
+    <h3>Oakland, CA</h3>
 </div>
 
 <div class="storyProfile" id="foodInfoAlt">
-    <img class="profilePic" id="detail" src="assets/profileImg.png" ></img>
     <h2 id="infoTitle">{{ name }}</h2>
-    <p class ="foodDescription">{{ description }}</p>
-    {{#each children.photos.data}}
-        <div class="inner3Grid"><img src="{{this.path_medium}}" class="profileImagesAlt" /></div>
-    {{/each}}
+    <p class ="foodDescription">{{ caption }}</p>
+    <div class="inner3Grid"><img src="{{ path_medium }}" class="profileImagesAlt" /></div>
 </div>

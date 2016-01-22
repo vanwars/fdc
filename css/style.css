@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Slabo+27px);
 #navBar {
 	width: 100%;
 	background-color: #ffffff;
@@ -10,14 +9,14 @@
 body {
 	padding: 0;
 	margin: 0;
-	margin-bottom: 30px;
+	margin-bottom: 80px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
     padding: 8px;
     margin: 0;
     color: #203f54;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     display: inline-block;
     font-size: 1.8em;
@@ -29,15 +28,13 @@ h2 {
     vertical-align: middle;
 }
 
-a#search-button {
+.search-button {
     background-color: #eb6627;
-    display: inline-block;
     cursor: pointer;
     color: #ffffff;
     font-size: 1.8em;
     text-decoration: none;
     border-style: none;
-    font-family: 'Montserrat', sans-serif;
     border-radius: 5px;
     padding: 3px 10px;
     margin: 7px;
@@ -46,13 +43,15 @@ a#search-button {
     float: right;
 }
 
-h3{
-	padding: 7px 11px 6px;
-	margin:0;
-	color: white;
-	background-color: #3dbdbf;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
+h3 {
+    padding: 7px 11px 6px;
+    margin: 0;
+    color: white;
+    background-color: #75923D;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.4em;
+    font-family: 'Slabo 27px', serif;
 }
 
 h4{
@@ -60,7 +59,6 @@ h4{
     background-color: #3DBEC0;
     text-align: center;
     font-size: 1.2em;	
-    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin: 0px;
     line-height: 40px;
@@ -69,7 +67,6 @@ h4{
 
 h5{
     font-size: 1.2em;	
-    font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 }
 
@@ -79,10 +76,9 @@ img {
     height: auto;
 }
 
-#titleCaption{
-	margin-bottom: 70px;
+.hide {
+    display: none;
 }
-
 
 #headerImg{
 	height: 400px;
@@ -92,7 +88,6 @@ img {
 }
 
 h1 { 
-   font-family: 'Montserrat', sans-serif;
    font-weight: 700;
    color: white; 
    font-size: 4em;
@@ -101,19 +96,10 @@ h1 {
 
 
 p {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: white;
 }
 
-.splash {
-    position: absolute;
-	top: 56px;  
-    background: rgba(34,34,34,0.45);
-    text-align: center;
-    width: 100%;
-    height: 570px;
-}
 
 #titleText{
 	width: 760px;
@@ -139,27 +125,8 @@ p {
     margin-top: 14px;
 }
 
-.outerGrid{
-	max-width: 980px;
-	margin-left: auto;
-	margin-right: auto;
-	height: 220px;
-	margin-bottom: 20px;
-
-}
-
-.innerGrid {
-    float: left;
-    padding: 25px;
-    text-align: center;
-    text-decoration: none;
-}
-.innerGrid a {
-    text-decoration: none;
-}
-
 .gridImg {
-	width: 440px;
+    width: 340px;
 }
 
 figcaption {
@@ -172,12 +139,16 @@ figcaption {
 #map {
     width: 100%;
     background-color: #EEE;
+    height: calc(100% - 25px);
 }
-.intro-map {
-    height: 320px;
-}
-.main-map {
-	height: 570px;
+
+#splash {
+    position: absolute;
+	top: 56px;  
+    background: rgba(34,34,34,0.45);
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
 }
 
 #googleMapAlt {
@@ -275,61 +246,58 @@ figcaption {
 	width: 260px;
 	float: right;
 }
-
-.outer3Grid{
-	max-width: 1200px;
-	left:0;
-	right:0;
-	margin-left:auto;
-	margin-right:auto;
+#place-overview {
+    background-color: #FFF;
+    padding-top: 15px;
+    min-height: 400px;
 }
 
-#photosGrid{
-	margin-top: 50px;
+.outer-grid {
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
+    padding-bottom: 40px;
+    max-width: 1110px;
+}
+.inner-grid {
+    float: left;
+    padding: 15px;
+    text-align: right;
+    text-decoration: none;
+    height: 226px;
+}
+.grid-overlay {
+    position: relative;
+    top: -70px;
+    z-index: 3;
+    float: right;
+}
+
+.label-triangle {
+    width: 0;
+    height: 0;
+    border-top: 36.5px solid transparent;
+    border-bottom: 36.5px solid transparent;
+    border-right: 20px solid #75923d;
+    float: left;
+    position: relative;
+    top: -14px;
+}
+
+.overlay-text {
+    color: white;
+    background-color: #75923d;
+    font-size: 2.27em;
+    font-family: 'Slabo 27px', serif;
+    font-weight: 400;
+    position: relative;
+    padding: 14px 14px 14px 4px;
 }
 
 #topSearch {
     display: inline-block;
     float:right
 }
-
-.inner3Grid{
-    float: left;
-    padding: 10px;
-    height:200px;
-    width:380px;
-}
-
-.profileImages{
-	width:100%;
-	height:100%;
-}
-
-.profileImagesAlt{
-	width:320px;
-	padding-left:30px;
-	padding-right:30px;
-	padding-bottom:30px;
-}
-
-#submitStory{
-	top:1000px;
-
-}
-
-#submitStoryButton{
-	left:0;
-	right:0;
-	width:300px;
-	margin: 0 auto;
-	background-color: #3DBEC0;
-	text-align: center;
-	padding:5px;
-	margin-top:5px;
-	margin-bottom:20px;
-}
-
-
 
 #detail{
 	margin-right:130px;
@@ -362,7 +330,6 @@ figcaption {
 }
 
 .searchBox{
-	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-size: .8em;
 	height:30px;
@@ -394,13 +361,11 @@ input.search-button{
 	background-color:#856277;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
+	color: #fff;
 	font-size:.8em;
 	height:30px;
 	text-decoration:none;
 	border-style: none;
-	font-family: 'Montserrat', sans-serif;
     margin: -4px;
 }
 
@@ -434,4 +399,21 @@ input.search-button{
  * New Styles
  */
 
-
+#bottom-nav {
+    background-color: #203F54;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0px;
+    width: calc(100% - 20px);
+    z-index: 1000;
+}
+#instagram-cta {
+    float: right;
+}
+#twitter-cta i, #instagram-cta i {
+    color: #fff;
+    font-size: 2em;
+    vertical-align: middle;
+    padding-right: 10px;
+}

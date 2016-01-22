@@ -19,15 +19,18 @@ var showSplash = function () {
     /*
      * Shows the splash page; everything else is greyed out.
      */
-    $(".splash").show();
-    $("#topSearch, #left-panel").hide();
+    $("#splash").fadeIn("slow");
+    $("#topSearch, #left-panel, #search-button-top").fadeOut("slow");
+    $("body").css({ overflow: 'auto'});
 };
 
 var hideSplash = function () {
     /*
      * Hides the splash page; users can see the main app
      */
-    $(".splash").hide();
-    $("#topSearch, #left-panel").show();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    $("#topSearch, #left-panel, #search-button-top").fadeIn("slow");
+    $("#splash").fadeOut("slow");
+    $("body").css({ overflow: 'hidden'});
 };
 
