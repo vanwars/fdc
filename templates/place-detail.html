@@ -1,5 +1,5 @@
 <div class="info-box-header">
-    <h3>Oakland, CA</h3>
+    <h3>{{ extras.city }}</h3>
 </div>
 <div class="storyProfile" id="foodInfoAlt">
     <div class="photo-container" style="background-image: url('{{ path_medium }}');">
@@ -9,10 +9,10 @@
         </svg>
         <h2>
             {{ name }}<br />
-            $4.64
+            {{ extras.price }}
         </h2>
     </div>
-    <p id="twitter-handle"><i class="fa fa-twitter"></i>@hungrygirl</p>
+    <p id="twitter-handle"><i class="fa fa-twitter"></i>{{ extras.handle }}</p>
     <!-- Three curly braces if you don't want to escape HTML -->
     <p class="food-description">"{{{ caption }}}"</p>
 </div>
