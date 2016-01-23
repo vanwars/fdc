@@ -1,16 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Slabo+27px);
-#navBar {
-	width: 100%;
-	background-color: #ffffff;
-    z-index: 1;
-    display: inline-block;
-}
 
+/**************************** Generic Tag Styles ****************************/
 body {
 	padding: 0;
 	margin: 0;
 	margin-bottom: 80px;
     font-family: 'Montserrat', sans-serif;
+}
+
+h1 { 
+   font-weight: 700;
+   color: white; 
+   font-size: 4em;
+   margin-bottom:20px;
 }
 
 h2 {
@@ -20,27 +22,6 @@ h2 {
     font-weight: 700;
     display: inline-block;
     font-size: 1.8em;
-}
-
-#logo {
-    height: 40px;
-    width: 40px;
-    vertical-align: middle;
-}
-
-.search-button {
-    background-color: #eb6627;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 1.8em;
-    text-decoration: none;
-    border-style: none;
-    border-radius: 5px;
-    padding: 3px 10px;
-    margin: 7px;
-}
-.map-view {
-    float: right;
 }
 
 h3 {
@@ -54,101 +35,60 @@ h3 {
     font-family: 'Slabo 27px', serif;
 }
 
-h4{
-	color: white;
-    background-color: #3DBEC0;
-    text-align: center;
-    font-size: 1.2em;	
+p {
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    margin: 0px;
-    line-height: 40px;
-
+    color: white;
 }
 
-h5{
-    font-size: 1.2em;	
-	font-weight: 700;
-}
-
+a { color: #7cc0c2; }
 
 img {
     width: 100%;
     height: auto;
 }
 
+#logo {
+    height: 40px;
+    width: 40px;
+    vertical-align: middle;
+}
+
+#navBar {
+	width: 100%;
+	background-color: #ffffff;
+    z-index: 1;
+    display: inline-block;
+}
+
+.search-button {
+    background-color: #eb6627;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.8em;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin: 7px;
+}
+
+.map-view {
+    float: right;
+}
+
 .hide {
     display: none;
 }
 
-#headerImg{
-	height: 400px;
-    width: 100%;
-    background: url(../assets/googleOaklandBlur.png) no-repeat 50% 50%;
-    margin-bottom: 40px;
-}
-
-h1 { 
-   font-weight: 700;
-   color: white; 
-   font-size: 4em;
-   margin-bottom:20px;
-}
-
-
-p {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    color: white;
-}
-a {
-    color: #7cc0c2;
-}
-
-
-#titleText{
-	width: 760px;
-	left: 0;
-	right: 0;
-	margin-left:auto;
-	margin-right:auto;
-	text-align: center;
-	padding-bottom: 50px;
-}
-
-#fixedNav {
-    float:right;
-    margin:8px;
-    margin-top: 12px;
-    margin-right: 12px
-}
-
-.fixedNavSearch {
-    float: right;
-    margin: 10px;
-    margin-right: 90px;
-    margin-top: 14px;
-}
-
-.grid-img {
-    width: 340px;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-figcaption {
-    background-color: #3DBEC0;
-    text-align: center;
-    color: white;
-    size: 2em;
-}
-
+/*********************************** Map ***********************************/
 #map {
     width: 100%;
     background-color: #EEE;
     height: calc(100% - 25px);
 }
 
+/********************* Splash Page (covers map templates/splash.html) ********************/
 #splash {
     position: absolute;
 	top: 56px;  
@@ -158,56 +98,21 @@ figcaption {
     z-index: 1000;
 }
 
-.storyProfile {
-    display: block;
-	width: 100%;
-	height: 120px;
-	border-bottom-width: 1px;
-	border-bottom-color: #f0f0f0;
-	border-bottom-style: solid;
-    text-decoration: none;
+#titleText {
+	width: 760px;
+	left: 0;
+	right: 0;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+	padding-bottom: 50px;
 }
 
-#profilePicList {
-	height: 80px;
-	width: 80px;
-	padding: 20px;
-	float: left;
-}
-
-.profilePic {
-	height: 120px;
-	width: 120px;
-}
-
-.name {
-	color:#585858;
-	font-size: 1em;
-	margin:15px;
-	padding:0px;
-	margin-left:0px;
-	margin-bottom: 5px;
-}
-
-.profileDescription{
-	color: #585858;
-	font-size: .8em;	
-	margin: 10px;
-	margin-left: 0px;
-	margin-top: 5px;
-}
-
-
-.description{
-	width: 260px;
-	float: right;
-}
 #place-overview {
     background-color: #FFF;
     padding-top: 15px;
     min-height: 400px;
 }
-
 .outer-grid {
     margin-left: auto;
     margin-right: auto;
@@ -227,6 +132,12 @@ figcaption {
     top: 180px;
     z-index: 3;
     float: right;
+}
+.grid-img {
+    width: 340px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .overlay-text:before {
     content: "";
@@ -250,145 +161,7 @@ figcaption {
     padding: 14px 14px 14px 4px;
 }
 
-#topSearch {
-    display: inline-block;
-    float:right
-}
-
-#detail {
-	margin-right:130px;
-	margin-left:130px;
-	margin-top:30px;
-	margin-bottom: 20px
-}
-
-.logo {
-	height:40px;
-	width:40px;
-	vertical-align:middle;
-}
-
-.searchBox{
-	font-weight: 400;
-	font-size: .8em;
-	height:30px;
-    width: 400px;
-	padding:5px;
-	border:1px solid #dbdbdb;
-}
-
-#navbarSearch{
-	width: 400px;
-	border-style: solid none solid solid;
-
-}
-
-
-
-#mainSearch{
-	border: 0;
-	width: 500px;
-}
-
-#socialMediaIcons{
-	width:300px;
-	top:880px;
-}
-
-
-input.search-button{
-	background-color:#856277;
-	display:inline-block;
-	cursor:pointer;
-	color: #fff;
-	font-size:.8em;
-	height:30px;
-	text-decoration:none;
-	border-style: none;
-    margin: -4px;
-}
-
-.myButton:hover {
-	background-color:#5cbf2a;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
-#backArrow{
-	float:left;
-	height:20px;
-	width:auto;
-	padding:10px;
-}
-
-
-/*
- * New Styles
- */
-
-#bottom-nav {
-    background-color: #203F54;
-    color: #fff;
-    padding: 10px;
-    position: fixed;
-    bottom: 0px;
-    width: calc(100% - 20px);
-    z-index: 1000;
-}
-#instagram-cta {
-    float: right;
-}
-#twitter-cta i, #instagram-cta i {
-    color: #fff;
-    font-size: 2em;
-    vertical-align: middle;
-    padding-right: 10px;
-}
-#twitter-handle i {
-    color: #55acee;
-}
-#twitter-handle {
-    color: #585858;
-    font-size: 1.4em;
-    padding: 20px;
-    margin-top: 0;
-    padding-bottom: 2px;
-    font-weight: bold;
-    width: calc(100% - 40px);
-    margin-bottom: 0;
-    font-family: 'Slabo 27px', serif;
-}
-.food-description {
-    color: #585858;
-    font-size: .8em;
-    padding: 10px 20px 30px;
-    margin: 0;
-}
-
-.photo-container { 
-    height: 300px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-svg {
-    float: right;
-    margin-top: 20px;
-}
-.tag, .tag-outline {
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-}
-.tag {
-    cursor: pointer;
-    fill: #203F54;
-}
-.tag-outline {
-    fill-opacity: 0;
-    stroke: #203F54;
-    stroke-width: 2;
-}
+/********************* Food Detail Page (templates/place-detail.html) *********************/
 .info-box {
     top: 70px;
     margin-left: 10px;
@@ -441,4 +214,78 @@ svg {
     float: right;
     top: -98px;
     width: 160px;
+}
+.photo-container { 
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+svg {
+    float: right;
+    margin-top: 20px;
+}
+.tag, .tag-outline {
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+}
+.tag {
+    cursor: pointer;
+    fill: #203F54;
+}
+.tag-outline {
+    fill-opacity: 0;
+    stroke: #203F54;
+    stroke-width: 2;
+}
+
+.food-detail {
+    display: block;
+	width: 100%;
+	height: 120px;
+	border-bottom-width: 1px;
+	border-bottom-color: #f0f0f0;
+	border-bottom-style: solid;
+    text-decoration: none;
+}
+
+#twitter-handle i {
+    color: #55acee;
+}
+#twitter-handle {
+    color: #585858;
+    font-size: 1.4em;
+    padding: 20px;
+    margin-top: 0;
+    padding-bottom: 2px;
+    font-weight: bold;
+    width: calc(100% - 40px);
+    margin-bottom: 0;
+    font-family: 'Slabo 27px', serif;
+}
+.food-description {
+    color: #585858;
+    font-size: .8em;
+    padding: 10px 20px 30px;
+    margin: 0;
+}
+
+/**************************** Bottom Navigation ****************************/
+
+#bottom-nav {
+    background-color: #203F54;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0px;
+    width: calc(100% - 20px);
+    z-index: 1000;
+}
+#instagram-cta {
+    float: right;
+}
+#twitter-cta i, #instagram-cta i {
+    color: #fff;
+    font-size: 2em;
+    vertical-align: middle;
+    padding-right: 10px;
 }
