@@ -14,5 +14,9 @@
     </div>
     <p id="twitter-handle"><i class="fa fa-twitter"></i>{{ extras.handle }}</p>
     <!-- Three curly braces if you don't want to escape HTML -->
-    <p class="food-description">"{{{ caption }}}"</p>
+    <p class="food-description">
+        "{{{ caption }}}"
+        <br />
+        <a href="javascript:pages.map.view.zoomTo([ {{ geometry.coordinates.[1] }}, {{ geometry.coordinates.[0] }} ], 17);">zoom</a>
+    </p>
 </div>

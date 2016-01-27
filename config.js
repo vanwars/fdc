@@ -19,6 +19,10 @@ var pages = {
         region: '#splash',
         transition: showSplash
     },
+    explore: {
+        url: "explore",
+        transition: showMap
+    },
     map: {
         type: "mapbox",
         accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
@@ -35,6 +39,6 @@ var pages = {
         template_path: "place-detail.html",
         region: '#left-panel',
         dataset: "fdc_data",
-        transition: hideSplash
+        transition: showDetail
     }
 };
