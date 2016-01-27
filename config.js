@@ -27,9 +27,9 @@ var pages = {
         type: "mapbox",
         accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
         styleID: "laurenbenichou.54e91cf8",
-        markerSymbol: "restaurant", /* Look here for more icons: https://www.mapbox.com/maki/ */
         dataset: "fdc_data",
-        clickRoute: "places",
+        markerURL: "places/:id",
+        markerColor: "eb6627",
         center: [39.889, -97.114],
         zoom: 4
     },
