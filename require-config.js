@@ -1,6 +1,6 @@
 require.config({
     baseUrl: "http://code510.org/wdk/js",
-    //baseUrl: "/js",
+    //baseUrl: "js",
     paths: {
         'backbone': 'external/backbone-min',
         'handlebars': 'external/handlebars.min',
