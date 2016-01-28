@@ -66,11 +66,13 @@ Each page entry consists of a key -- an arbitrary page name that you make up (e.
 There are also some additional configuration options that are type-specific:
 
 1. **type: "mapbox"**
-  * **accessToken**: Your mapbox access token.
-  * **styleID**: Your mapbox style ID
-  * **markerSymbol**: TBD...still being extended to accommodate custom symbols
-  * **dataset**: the datasource for the markers.
-  * **clickRoute**: when you click a marker, what url route to load.
+  * **accessToken**: your mapbox access token.
+  * **styleID**: your mapbox style ID
+  * **markerColor**: color of the marker
+  * **zoom**: initial zoom level of the map
+  * **center**: intial map center point ([lat, lng]). Example: [39.889, -97.114]
+  * **dataset**: datasource for the markers
+  * **markerURL**: when you click a marker, what url route to load
 2. **type: "list"**
   * **dataset**: the datasource for the list of data.
   * **collection_template_path**: the template that holds the entire list (see "place-list.html" for more details)
