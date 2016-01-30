@@ -24,7 +24,5 @@ var showDetail = function () {
     $("#left-panel").fadeIn("slow");
 };
 
-var zoomTo = function (geom) {
-    
-}
+
 
