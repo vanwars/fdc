@@ -13,7 +13,7 @@ h1 {
    font-weight: 700;
    color: white; 
    font-size: 4em;
-   margin-bottom:20px;
+   margin:20px;
 }
 
 h2 {
@@ -22,7 +22,7 @@ h2 {
     color: #203f54;
     font-weight: 700;
     display: inline-block;
-    font-size: 1.8em;
+    font-size: 1.4em;
 }
 
 h3 {
@@ -50,10 +50,11 @@ img {
 }
 
 #logo {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     vertical-align: middle;
 }
+
 
 #navBar {
 	width: 100%;
@@ -92,55 +93,66 @@ img {
 /********************* Splash Page (covers map templates/splash.html) ********************/
 #splash {
     position: absolute;
-	top: 56px;  
+	top: 47px;  
     background: rgba(34,34,34,0.45);
     text-align: center;
     width: 100%;
     z-index: 1000;
 }
 
-#titleText {
-	width: 760px;
+#title-text {
+	width: 66%;
 	left: 0;
 	right: 0;
 	margin-left:auto;
 	margin-right:auto;
 	text-align: center;
-	padding-bottom: 50px;
+	padding: 10vh;
+}
+
+#title-caption{
+    margin-bottom:60px;
+    padding:10px;
 }
 
 #place-overview {
     background-color: #FFF;
-    padding-top: 15px;
-    min-height: 400px;
+    padding-top: 5px;
+    /*min-height: 400px;*/
+    position: fixed;
+    bottom: 0px;
+    height: 210px;
+    width: 100%;
 }
 .outer-grid {
     margin-left: auto;
     margin-right: auto;
     height: 220px;
     padding-bottom: 40px;
-    max-width: 1110px;
+    max-width: 960px;
 }
 .inner-grid {
     float: left;
-    padding: 15px;
+    padding: 5px;
     text-align: right;
     text-decoration: none;
     height: 226px;
 }
 .grid-overlay {
     position: relative;
-    top: 180px;
+    top: 100px;
     z-index: 3;
     float: right;
 }
-.grid-img {
-    width: 340px;
-    height: 250px;
+.inner-grid div {
+    width: 150px;
+    height: 150px;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
-.overlay-text:before {
+
+/**.overlay-text:before {
     content: "";
     width: 0;
     height: 0;
@@ -150,16 +162,16 @@ img {
     float: left;
     position: relative;
     top: -14px;
-}
+}**/
 
 .overlay-text {
     color: white;
     background-color: #75923d;
-    font-size: 2.27em;
+    font-size: 1.4em;
     font-family: 'Slabo 27px', serif;
     font-weight: 400;
     position: relative;
-    padding: 14px 14px 14px 4px;
+    padding:4px;
 }
 
 /********************* Food Detail Page (templates/place-detail.html) *********************/
@@ -270,6 +282,25 @@ svg {
     margin: 0;
 }
 
+
+@media (max-width: 700px) {
+    #title-text{
+        width:100%;
+        padding:0px;
+    }
+    h1{
+        font-size:2.8em;
+    }
+}
+
+@media (min-width: 1280px) {
+    #title-text{
+        width:645px;
+    }
+}
+
+
+
 /**************************** Bottom Navigation ****************************/
 
 #bottom-nav {
@@ -286,7 +317,12 @@ svg {
 }
 #twitter-cta i, #instagram-cta i {
     color: #fff;
-    font-size: 2em;
+    font-size: 1.4em;
     vertical-align: middle;
     padding-right: 10px;
+}
+@media (max-width: 700px) {
+    #twitter-cta span, #instagram-cta span{
+        font-size:0; 
+    }
 }
