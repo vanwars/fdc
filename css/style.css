@@ -25,17 +25,21 @@ html, body {
 }
 .map-page {
     height: 100%;
+}
+.splash-page {
+    position: absolute;
+    width: 100%;
     top: 0px;
+    min-height: 100%;
+    background: #FFF;
 }
 
 .top-third {
     display: flex;
     flex-direction: column;
-    /*
     flex: 2;
-    flex: 1 1 50%;
-    */
-    height: 58%;
+    height: 66%;
+    min-height: 390px;
     background-image: url('../assets/googleOaklandBlur.png');
     background-size: cover;
 }

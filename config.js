@@ -16,7 +16,8 @@ var pages = {
     splash: {
         url: "",
         template_path: "splash.html",
-        region: '#splash',
+        region: ".bottom-two-thirds",
+        className: "outer-grid",
         transition: showSplash
     },
     explore: {

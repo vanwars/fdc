@@ -8,7 +8,6 @@ var showSplash = function () {
 
 var showApp = function () {
     $("html, body").animate({ scrollTop: 0 }, "slow");
-    $("#search-button-top").fadeIn("slow");
     $("body").css({ overflow: 'hidden'});
 };
 
@@ -21,8 +20,8 @@ var showMap = function () {
 
 var showDetail = function () {
     showApp();
-    $("#splash").fadeOut("slow");
-    $("#left-panel").fadeIn("slow");
+    $(".splash-page").fadeOut("slow");
+    $("#left-panel, .map-page").fadeIn("slow");
 };
 
 
