@@ -1,8 +1,8 @@
 location.hash = ''; //make sure the page initializes on the first page...
 
 var showSplash = function () {
-    $("#splash").fadeIn("slow");
-    $("#left-panel, #search-button-top").fadeOut("slow");
+    $(".splash-page").fadeIn("slow");
+    $(".map-page").fadeOut("slow");
     $("body").css({ overflow: 'auto'});
 };
 
@@ -14,7 +14,8 @@ var showApp = function () {
 
 var showMap = function () {
     showApp();
-    $("#splash, #left-panel").fadeOut("slow");
+    $(".splash-page, #left-panel").fadeOut("slow");
+    $(".map-page").fadeIn("slow");
     pages.map.view.fitMapToLayer();
 };
 

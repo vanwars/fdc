@@ -1,14 +1,128 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Slabo+27px);
 
 /**************************** Generic Tag Styles ****************************/
-body {
-	padding: 0;
-	margin: 0;
-	margin-bottom: 80px;
-    font-family: 'Montserrat', sans-serif;
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
+    font: 16px "Fakt",AvenirNext-Medium,"Segoe UI",sans-serif;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: 'Montserrat', sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+/****** Splash Page **********/
+.splash-page, .map-page {
+    display: flex;
+    flex-direction: column;
+}
+.map-page {
+    height: 100%;
+    display: none;
+    top: 0px;
+}
+
+.top-third {
+    display: flex;
+    flex-direction: column;
+    /*
+    flex: 2;
+    flex: 1 1 50%;
+    */
+    height: 58%;
+    background-image: url('../assets/googleOaklandBlur.png');
+    background-size: cover;
+}
+.nav-bar {
+    background: #FFF;
+}
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0px 0px 0px 0px;
+    flex: 2;
+}
+.title-text {
+    text-align: center;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottom-two-thirds {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-flow: row wrap;
+    padding: 20px 20px 50px 20px;
+}
+.outer-grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1130px;
+}
+.inner-grid {
+    display: inline-block;
+}
+.grid-overlay {
+    position: relative;
+    top: 100px;
+    z-index: 3;
+    float: right;
+}
+.grid-img {
+    /*width: 100%;*/
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.overlay-text:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 18px 12px 18px 0;
+    border-color: transparent #203F54 transparent transparent;
+    float: left;
+    position: relative;
+    top:-4px;
+
+}
+.overlay-text {
+    color: white;
+    background-color: #203F54;
+    font-size: 1.4em;
+    font-family: 'Slabo 27px', serif;
+    font-weight: 400;
+    position: relative;
+    padding: 4px;
+}
+
+
+
+#col1 {
+    background-color: yellow;
+    flex :0 0 240px;
+}
+#col2 {
+    background-color: orange;
+    flex: 1 1;
+}
+#col3 {
+    background-color: purple;
+    flex: 0 0 240px;
+}
+
+
+/****************************/
 h1 { 
    font-weight: 700;
    color: white; 
@@ -85,8 +199,9 @@ img {
 /*********************************** Map ***********************************/
 #map {
     width: 100%;
+    flex: 2;
     background-color: #EEE;
-    height: calc(100% - 25px);
+    /*height: calc(100% - 25px);*/
 }
 
 /********************* Splash Page (covers map templates/splash.html) ********************/
@@ -99,67 +214,10 @@ img {
     z-index: 1000;
 }
 
-#titleText {
-	width: 760px;
-	left: 0;
-	right: 0;
-	margin-left:auto;
-	margin-right:auto;
-	text-align: center;
-	padding-bottom: 50px;
-}
-
 #place-overview {
     background-color: #FFF;
     padding-top: 15px;
     min-height: 400px;
-}
-.outer-grid {
-    margin-left: auto;
-    margin-right: auto;
-    height: 220px;
-    padding-bottom: 40px;
-    max-width: 1110px;
-}
-.inner-grid {
-    float: left;
-    padding: 15px;
-    text-align: right;
-    text-decoration: none;
-    height: 226px;
-}
-.grid-overlay {
-    position: relative;
-    top: 180px;
-    z-index: 3;
-    float: right;
-}
-.grid-img {
-    width: 340px;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.overlay-text:before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 36.5px solid transparent;
-    border-bottom: 36.5px solid transparent;
-    border-right: 20px solid #75923d;
-    float: left;
-    position: relative;
-    top: -14px;
-}
-
-.overlay-text {
-    color: white;
-    background-color: #75923d;
-    font-size: 2.27em;
-    font-family: 'Slabo 27px', serif;
-    font-weight: 400;
-    position: relative;
-    padding: 14px 14px 14px 4px;
 }
 
 /********************* Food Detail Page (templates/place-detail.html) *********************/
@@ -278,7 +336,7 @@ svg {
     padding: 10px;
     position: fixed;
     bottom: 0px;
-    width: calc(100% - 20px);
+    width: 100%;
     z-index: 1000;
 }
 #instagram-cta {
