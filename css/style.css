@@ -28,7 +28,7 @@ h2 {
 h3 {
     padding: 7px 11px 6px;
     margin: 0;
-    color: white;
+    color: #fff;
     background-color: rgb(32, 63, 84);
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -336,16 +336,21 @@ svg {
         width: 60%;       
     }
     h2.mobile-layout  {
-        background-color:rgb(32, 63, 84);
+        background-color:#fff;
         font-size:1em;
         width:100%;
         padding:4px 8px 8px;
+        color:rgb(32, 63, 84);
+        border-style:none none solid;
+        border-color:#d3d3d3;
+        border-width:1px;
     }
     #city-name{
-        color:rgba(255, 255, 255, 0.7);
+        color:rgba(32, 63, 84, 0.7);
         padding-bottom:0;
         font-size:0.8em;
         text-transform:uppercase;
+        background-color:#fff;
     }
     .info-box{
         border-style:none;
@@ -386,7 +391,11 @@ svg {
 @media (max-width: 700px) {
     #twitter-cta span, #instagram-cta span{
         font-size:0; 
+        border-style: solid none none none;
+        border-color: #d3d3d3;
+        border-width: 1px;
     }
+
 }
 
 #section{
