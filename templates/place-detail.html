@@ -1,22 +1,27 @@
-<div class="info-box-header">
-    <h3>{{ extras.city }}</h3>
-</div>
+<h3 id = "city-name">{{ extras.city }}</h3>
+
 <div class="food-detail">
+    <h2 class = "mobile-layout">
+            {{ name }}{{ extras.price }}
+    </h2>
     <div class="photo-container" style="background-image: url('{{ path_medium }}');">
         <svg id="color-fill" height="110" width="210">
             <polyline class="tag-outline" points="360,172 70,172 15,92 70,2 360,2"></polyline>
             <polygon class="tag" points="360,162 74,162 25,93 74,12 360,12"></polygon>
         </svg>
-        <h2>
+        <h2 class = "browser-layout">
             {{ name }}<br />
             {{ extras.price }}
         </h2>
     </div>
-    <p id="twitter-handle"><i class="fa fa-twitter"></i>{{ extras.handle }}</p>
-    <!-- Three curly braces if you don't want to escape HTML -->
-    <p class="food-description">
-        "{{{ caption }}}"
-        <br />
-        <a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>
-    </p>
+    <div id = "twitter-comment">
+        <p id="twitter-handle"><i class="fa fa-twitter"></i>{{ extras.handle }}</p>
+        <!-- Three curly braces if you don't want to escape HTML -->
+        <p class="food-description">
+            "{{{ caption }}}"
+            <br />
+            <a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>
+        </p>
+    </div>
 </div>
+

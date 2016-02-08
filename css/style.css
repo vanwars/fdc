@@ -29,7 +29,7 @@ h3 {
     padding: 7px 11px 6px;
     margin: 0;
     color: white;
-    background-color: #90C5A9;
+    background-color: rgb(32, 63, 84);
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1.4em;
@@ -176,12 +176,6 @@ img {
 
 /********************* Food Detail Page (templates/place-detail.html) *********************/
 .info-box {
-    top: 70px;
-    margin-left: 10px;
-    width: 380px;
-    /* height: 500px; */
-    height: calc(100% - 150px);
-    position: absolute;
     background-color: #fff;
     display: none;
     border-style: none none solid;
@@ -219,14 +213,8 @@ img {
 
 .info-box h2 {
     color: white;
-    font-size: 1em;
     line-height: 1.4em;
     font-weight: normal;
-    text-align: right;
-    position: relative;
-    float: right;
-    top: -98px;
-    width: 160px;
 }
 .photo-container { 
     height: 300px;
@@ -254,7 +242,6 @@ svg {
 .food-detail {
     display: block;
 	width: 100%;
-	height: 120px;
 	border-bottom-width: 1px;
 	border-bottom-color: #f0f0f0;
 	border-bottom-style: solid;
@@ -282,8 +269,40 @@ svg {
     margin: 0;
 }
 
+@media (min-width: 700px) {
+    .mobile-layout{
+         font-size:0; 
+    }
+    .info-box{
+        width: 380px;
+        margin-left:10px;
+        height: calc(100% - 150px);
+        top: 70px;
+        /* height: 500px; */
+        position: absolute;
+    }
+    h2.browser-layout{
+        text-align: right;
+        position: relative;
+        float: right;
+        top: -98px;
+        width: 160px;
+        font-size:1em;
+    }
+    h2.mobile-layout{
+        font-size:0;
+        padding:0;
+    }
+
+}
+
 
 @media (max-width: 700px) {
+    h2.info-box {
+        width:100%;
+        color:#fff;
+    }
+
     #title-text{
         width:100%;
         padding:0px;
@@ -291,11 +310,54 @@ svg {
     h1{
         font-size:2.8em;
     }
+    svg{
+        visibility:hidden;
+    }
+    .browser-layout{
+        font-size:0; 
+    }
+    .info-box{
+        width: 100%;
+        margin-left:0;
+        position:fixed;
+        bottom:0px;
+    }
+    .photo-container{
+        display: inline-block;
+        height: 200px;
+        width: 40%;
+    }
+    .food-description{
+        float:right;
+    }
+    #twitter-comment{
+        display: inline-block;
+        float: right;
+        width: 60%;       
+    }
+    h2.mobile-layout  {
+        background-color:rgb(32, 63, 84);
+        font-size:1em;
+        width:100%;
+        padding:4px 8px 8px;
+    }
+    #city-name{
+        color:rgba(255, 255, 255, 0.7);
+        padding-bottom:0;
+        font-size:0.8em;
+        text-transform:uppercase;
+    }
+    .info-box{
+        border-style:none;
+    }
 }
 
 @media (min-width: 1280px) {
     #title-text{
         width:700px;
+    }
+    .food-detail{
+        height: 120px;
     }
 }
 
