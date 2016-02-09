@@ -10,7 +10,7 @@ body {
 
 h1 { 
     font-weight: 700;
-    color: #FFF;
+    color: #fff;
     font-size: 5em;
     margin: 20px;
     margin-bottom: 0;
@@ -19,7 +19,7 @@ h1 {
 h2 {
     padding: 8px;
     margin: 0;
-    color: #203f54;
+    color: rgb(32, 63, 84);
     font-weight: 700;
     display: inline-block;
     font-size: 1.4em;
@@ -32,8 +32,8 @@ h3 {
     background-color: rgb(32, 63, 84);
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 1.4em;
-    font-family: 'Slabo 27px', serif;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 p {
@@ -212,7 +212,6 @@ img {
 }
 
 .info-box h2 {
-    color: white;
     line-height: 1.4em;
     font-weight: normal;
 }
@@ -242,9 +241,6 @@ svg {
 .food-detail {
     display: block;
 	width: 100%;
-	border-bottom-width: 1px;
-	border-bottom-color: #f0f0f0;
-	border-bottom-style: solid;
     text-decoration: none;
 }
 
@@ -271,26 +267,26 @@ svg {
 
 @media (min-width: 700px) {
     .mobile-layout{
-         font-size:0; 
+         display:none;
     }
     .info-box{
         width: 380px;
         margin-left:10px;
-        height: calc(100% - 150px);
         top: 70px;
         /* height: 500px; */
         position: absolute;
     }
-    h2.browser-layout{
+    h2.food-name{
         text-align: right;
         position: relative;
         float: right;
         top: -98px;
         width: 160px;
         font-size:1em;
+        color:#fff;
     }
     h2.mobile-layout{
-        font-size:0;
+        display:none;
         padding:0;
     }
 
@@ -300,7 +296,7 @@ svg {
 @media (max-width: 700px) {
     h2.info-box {
         width:100%;
-        color:#fff;
+        color:#203F54;
     }
 
     #title-text{
@@ -314,18 +310,19 @@ svg {
         visibility:hidden;
     }
     .browser-layout{
-        font-size:0; 
+        display:none;
+        padding:0;
     }
     .info-box{
         width: 100%;
         margin-left:0;
         position:fixed;
-        bottom:0px;
+        bottom:42.4px;
     }
     .photo-container{
         display: inline-block;
-        height: 200px;
-        width: 40%;
+        height: 150px;
+        width: 150px;
     }
     .food-description{
         float:right;
@@ -333,24 +330,24 @@ svg {
     #twitter-comment{
         display: inline-block;
         float: right;
-        width: 60%;       
+        height:150px;
+        width: calc(100% - 150px);     
     }
-    h2.mobile-layout  {
+    h2.food-name  {
         background-color:#fff;
         font-size:1em;
-        width:100%;
-        padding:4px 8px 8px;
+        padding:10px;
         color:rgb(32, 63, 84);
-        border-style:none none solid;
-        border-color:#d3d3d3;
-        border-width:1px;
+        border-style: none none solid;
+        width: 100%;
+        border-color: #d3d3d3;
+        border-width: 1px;
     }
     #city-name{
-        color:rgba(32, 63, 84, 0.7);
-        padding-bottom:0;
-        font-size:0.8em;
+        font-size:1em;
         text-transform:uppercase;
-        background-color:#fff;
+        padding:10px;
+        text-align:center;
     }
     .info-box{
         border-style:none;
@@ -361,9 +358,6 @@ svg {
     #title-text{
         width:700px;
     }
-    .food-detail{
-        height: 120px;
-    }
 }
 
 
@@ -371,8 +365,8 @@ svg {
 /**************************** Bottom Navigation ****************************/
 
 #bottom-nav {
-    background-color: #fff;
-    color: #203F54;
+    background-color: #203F54;
+    color: #fff;
     padding: 10px;
     position: fixed;
     bottom: 0px;
@@ -383,7 +377,7 @@ svg {
     float: right;
 }
 #twitter-cta i, #instagram-cta i {
-    color: #203F54;
+    color: #fff;
     font-size: 1.4em;
     vertical-align: middle;
     padding-right: 10px;
@@ -391,6 +385,8 @@ svg {
 @media (max-width: 700px) {
     #twitter-cta span, #instagram-cta span{
         font-size:0; 
+    }
+    #bottom-nav{
         border-style: solid none none none;
         border-color: #d3d3d3;
         border-width: 1px;

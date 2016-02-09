@@ -40,5 +40,17 @@ var pages = {
         region: '#left-panel',
         dataset: "fdc_data",
         transition: showDetail
+    },
+    mainNav: {
+        url: "",
+        template_path: "nav-main.html",
+        region: '#nav-bar'
+    },
+    detailNav: {
+        type: "detail",
+        url: "places/:id",
+        template_path: "nav-detail.html",
+        region: '#nav-bar',
+        dataset: "fdc_data"
     }
 };
