@@ -16,7 +16,8 @@ var pages = {
     splash: {
         url: "",
         template_path: "splash.html",
-        region: '#splash',
+        region: ".bottom-two-thirds",
+        className: "outer-grid",
         transition: showSplash
     },
     explore: {
@@ -28,15 +29,31 @@ var pages = {
         accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
         styleID: "laurenbenichou.54e91cf8",
         dataset: "fdc_data",
-        markerURL: "places/:id",
-        markerColor: "eb6627",
         center: [39.889, -97.114],
-        zoom: 4
+        zoom: 4,
+        disableZoomScroll: true,
+        marker: {
+            clickURL: "places/:id",
+            color: "eb6627",
+            icon: {
+                iconUrl: 'assets/plate2.png',
+                iconSize: [50, 50],
+                iconAnchor: [25, 25]
+            },
+            zoomLevelDetail: 10
+        }
     },
     foodDetailPage: {
         type: "detail",
         url: "places/:id",
         template_path: "place-detail.html",
+        region: '#left-panel',
+        dataset: "fdc_data",
+        transition: showDetail
+    },
+    foodDetailPageZoom: {
+        url: "places/zoom/:id",
+        template_path: "place-detail-zoom.html",
         region: '#left-panel',
         dataset: "fdc_data",
         transition: showDetail
