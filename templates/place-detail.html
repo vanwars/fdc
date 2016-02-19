@@ -10,14 +10,16 @@
             {{ extras.price }}
         </h2>
     </div>
-    <div id = "twitter-comment">
-        <h2 class = "food-name mobile-layout">
-            {{ name }}
-        </h2>
-        <h4 class = "food-name mobile-layout">
-            {{ extras.price }}
-        </h4>
-        <p id="twitter-handle" class = "browser-layout"><i class="fa fa-twitter"></i>{{ extras.handle }}</p>
+    <div id="twitter-comment">
+        <a href="#/places/zoom/{{id}}">
+            <h2 class = "food-name mobile-layout">
+                {{ name }}
+            </h2>
+            <h4 class="food-name mobile-layout">
+                {{ extras.price }}
+            </h4>
+        </a>
+        <p id="twitter-handle" class="browser-layout"><i class="fa fa-twitter"></i>{{ extras.handle }}</p>
         <!-- Three curly braces if you don't want to escape HTML -->
         <p class="food-description browser-layout">
             "{{{ caption }}}"
