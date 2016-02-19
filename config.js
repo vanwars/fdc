@@ -16,7 +16,8 @@ var pages = {
     splash: {
         url: "",
         template_path: "splash.html",
-        region: '#splash',
+        region: ".bottom-two-thirds",
+        className: "outer-grid",
         transition: showSplash
     },
     explore: {
@@ -49,5 +50,24 @@ var pages = {
         region: '#left-panel',
         dataset: "fdc_data",
         transition: showDetail
+    },
+    foodDetailPageZoom: {
+        url: "places/zoom/:id",
+        template_path: "place-detail-zoom.html",
+        region: '#left-panel',
+        dataset: "fdc_data",
+        transition: showDetail
+    },
+    mainNav: {
+        url: "",
+        template_path: "nav-main.html",
+        region: '#nav-bar'
+    },
+    detailNav: {
+        type: "detail",
+        url: "places/:id",
+        template_path: "nav-detail.html",
+        region: '#nav-bar',
+        dataset: "fdc_data"
     }
 };

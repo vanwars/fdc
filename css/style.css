@@ -1,39 +1,52 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Slabo+27px);
 
 /**************************** Generic Tag Styles ****************************/
-body {
-	padding: 0;
-	margin: 0;
-	margin-bottom: 80px;
-    font-family: 'Montserrat', sans-serif;
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
+    font: 16px "Fakt",AvenirNext-Medium,"Segoe UI",sans-serif;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: 'Montserrat', sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+
+
+
 h1 { 
-   font-weight: 700;
-   color: white; 
-   font-size: 4em;
-   margin-bottom:20px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 5em;
+    margin: 20px;
+    margin-bottom: 0;
 }
 
 h2 {
     padding: 8px;
     margin: 0;
-    color: #203f54;
+    color: rgb(32, 63, 84);
     font-weight: 700;
     display: inline-block;
-    font-size: 1.8em;
+    font-size: 1.4em;
 }
 
 h3 {
     padding: 7px 11px 6px;
     margin: 0;
-    color: white;
-    background-color: #75923D;
+    color: #fff;
+    background-color: rgb(32, 63, 84);
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 1.4em;
-    font-family: 'Slabo 27px', serif;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 p {
@@ -50,10 +63,11 @@ img {
 }
 
 #logo {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     vertical-align: middle;
 }
+
 
 #navBar {
 	width: 100%;
@@ -63,14 +77,14 @@ img {
 }
 
 .search-button {
-    background-color: #eb6627;
+    background-color: #FA8B60;
     cursor: pointer;
     color: #ffffff;
-    font-size: 1.8em;
+    font-size: 1.2em;
     text-decoration: none;
     border-style: none;
     border-radius: 5px;
-    padding: 3px 10px;
+    padding: 2px 10px 4px;
     margin: 7px;
 }
 
@@ -86,27 +100,119 @@ img {
 #map {
     width: 100%;
     background-color: #EEE;
-    height: calc(100% - 25px);
+    height:100%;
 }
+
+/****** Splash Page **********/
+
+.map-page {
+    height: 100%;
+}
+.splash-page {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    min-height: 100%;
+    background: #FFF;
+}
+
+.top-third {
+    height: 66vh;
+    min-height: 390px;
+    background-image: url('../assets/googleOaklandBlur.png');
+    background-size: cover;
+}
+.nav-bar {
+    background: #FFF;
+}
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
+}
+.title-text {
+    text-align: center;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.bottom-two-thirds {
+    padding: 20px 20px 50px 20px;
+}
+.outer-grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1130px;
+    text-align: center;
+}
+.inner-grid {
+    display: inline-block;
+}
+.grid-overlay {
+    position: relative;
+    top: 150px;
+    z-index: 3;
+    float: right;
+}
+.grid-img {
+    /*width: 100%;*/
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.overlay-text:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 18px 12px 18px 0;
+    border-color: transparent #203F54 transparent transparent;
+    float: left;
+    position: relative;
+    top:-4px;
+
+}
+.overlay-text {
+    color: white;
+    background-color: #203F54;
+    font-size: 1.4em;
+    font-family: 'Slabo 27px', serif;
+    font-weight: 400;
+    position: relative;
+    padding: 4px;
+}
+
+.title-text > p{
+    margin:20px;
+}
+
+#col1 {
+    background-color: yellow;
+    flex :0 0 240px;
+}
+#col2 {
+    background-color: orange;
+    flex: 1 1;
+}
+#col3 {
+    background-color: purple;
+    flex: 0 0 240px;
+}
+
 
 /********************* Splash Page (covers map templates/splash.html) ********************/
 #splash {
     position: absolute;
-	top: 56px;  
+    top: 56px;  
     background: rgba(34,34,34,0.45);
     text-align: center;
     width: 100%;
     z-index: 1000;
-}
-
-#titleText {
-	width: 760px;
-	left: 0;
-	right: 0;
-	margin-left:auto;
-	margin-right:auto;
-	text-align: center;
-	padding-bottom: 50px;
 }
 
 #place-overview {
@@ -114,63 +220,12 @@ img {
     padding-top: 15px;
     min-height: 400px;
 }
-.outer-grid {
-    margin-left: auto;
-    margin-right: auto;
-    height: 220px;
-    padding-bottom: 40px;
-    max-width: 1110px;
-}
-.inner-grid {
-    float: left;
-    padding: 15px;
-    text-align: right;
-    text-decoration: none;
-    height: 226px;
-}
-.grid-overlay {
-    position: relative;
-    top: 180px;
-    z-index: 3;
-    float: right;
-}
-.grid-img {
-    width: 340px;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.overlay-text:before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 36.5px solid transparent;
-    border-bottom: 36.5px solid transparent;
-    border-right: 20px solid #75923d;
-    float: left;
-    position: relative;
-    top: -14px;
-}
 
-.overlay-text {
-    color: white;
-    background-color: #75923d;
-    font-size: 2.27em;
-    font-family: 'Slabo 27px', serif;
-    font-weight: 400;
-    position: relative;
-    padding: 14px 14px 14px 4px;
-}
+
 
 /********************* Food Detail Page (templates/place-detail.html) *********************/
 .info-box {
-    top: 70px;
-    margin-left: 10px;
-    width: 380px;
-    /* height: 500px; */
-    height: calc(100% - 150px);
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #fff;
     display: none;
     border-style: none none solid;
     border-color: #203F54;
@@ -206,15 +261,8 @@ img {
 }
 
 .info-box h2 {
-    color: white;
-    font-size: 1em;
     line-height: 1.4em;
     font-weight: normal;
-    text-align: right;
-    position: relative;
-    float: right;
-    top: -98px;
-    width: 160px;
 }
 .photo-container { 
     height: 300px;
@@ -242,10 +290,6 @@ svg {
 .food-detail {
     display: block;
 	width: 100%;
-	height: 120px;
-	border-bottom-width: 1px;
-	border-bottom-color: #f0f0f0;
-	border-bottom-style: solid;
     text-decoration: none;
 }
 
@@ -270,6 +314,148 @@ svg {
     margin: 0;
 }
 
+@media (min-width: 700px) {
+    .mobile-layout{
+         display:none;
+    }
+    .info-box{
+        width: 380px;
+        margin-left:10px;
+        top: 70px;
+        /* height: 500px; */
+        position: absolute;
+    }
+    h2.food-name{
+        color: white;
+        font-size: 1em;
+        line-height: 1.4em;
+        font-weight: normal;
+        text-align: right;
+        position: relative;
+        float: right;
+        top: -98px;
+        width: 170px;
+        clear: both;
+    }
+    
+    h2.mobile-layout{
+        display:none;
+        padding:0;
+    }
+}
+
+
+@media (max-width: 700px) {
+    h2.info-box {
+        width:100%;
+        color:#203F54;
+    }
+
+    #title-text{
+        width:100%;
+        padding:0px;
+    }
+    h1{
+        font-size:2.8em;
+    }
+    .photo-container svg{
+        visibility:hidden;
+    }
+    .browser-layout{
+        display:none;
+        padding:0;
+    }
+    .info-box{
+        width: 100%;
+        margin-left:0;
+        position:fixed;
+        bottom:42.4px;
+    }
+    .photo-container{
+        display: inline-block;
+        height: 150px;
+        width: 150px;
+    }
+    .food-description{
+        float:right;
+    }
+    #twitter-comment{
+        display: inline-block;
+        float: right;
+        height:150px;
+        width: calc(100% - 150px);     
+    }
+    h2.food-name  {
+        background-color:#fff;
+        font-size:1.4em;
+        padding:10px;
+        color:rgb(32, 63, 84);
+        line-height: 1.2;
+    }
+    h4.food-name  {
+        background-color:#fff;
+        font-size:1em;
+        padding: 0px 10px 10px;
+        color: #808080;
+        margin:0;
+    }
+    #city-name{
+        font-size:1em;
+        text-transform:uppercase;
+        padding:10px;
+        text-align:center;
+    }
+    .info-box{
+        border-style:none;
+    }
+}
+
+
+
+@media (min-width: 1280px) {
+    #title-text{
+        width:700px;
+        padding-top:;
+    }
+}
+
+
+
+/**************************** Mobile sheet ****************************/
+
+.mobile-sheet{
+    background-color: #fff;
+    overflow: hidden;
+    width: 100%;
+    margin-left:0;
+}
+
+.zoom-photo-container{
+    width:100%;
+    height:100%;
+    max-height:300px;
+}
+
+.mobile-sheet h2{
+    padding:10px 20px 0;
+}
+
+.mobile-sheet h2{
+    color: white;
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: normal;
+    text-align: right;
+    position: relative;
+    float: right;
+    top: -98px;
+    width: 170px;
+    clear: both;
+}
+
+
+
+
 /**************************** Bottom Navigation ****************************/
 
 #bottom-nav {
@@ -278,7 +464,7 @@ svg {
     padding: 10px;
     position: fixed;
     bottom: 0px;
-    width: calc(100% - 20px);
+    width: 100%;
     z-index: 1000;
 }
 #instagram-cta {
@@ -288,5 +474,13 @@ svg {
     color: #fff;
     font-size: 2em;
     vertical-align: middle;
-    padding-right: 10px;
+    padding: 0 10px;
+    float:right;
 }
+@media (max-width: 700px) {
+    #twitter-cta span, #instagram-cta span{
+        font-size:0; 
+    }
+
+}
+
