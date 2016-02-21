@@ -294,10 +294,13 @@ svg {
     text-decoration: none;
 }
 
-#twitter-handle i {
+#social-media-handle .fa-instagram.dark {
+    color: #585858;
+}
+#social-media-handle i {
     color: #55acee;
 }
-#twitter-handle {
+#social-media-handle {
     color: #585858;
     font-size: 1.4em;
     padding: 20px;
@@ -307,6 +310,12 @@ svg {
     width: calc(100% - 40px);
     margin-bottom: 0;
     font-family: 'Slabo 27px', serif;
+}
+
+#social-media-handle a {
+    color: #585858;
+    font-size: 22.4px;
+    text-decoration: none;
 }
 .food-description {
     color: #585858;
@@ -380,7 +389,7 @@ svg {
     .food-description{
         float:right;
     }
-    #twitter-comment{
+    #social-media-comment{
         display: inline-block;
         float: right;
         height:150px;
@@ -514,11 +523,38 @@ svg {
     -webkit-border-radius: 23px;
     -moz-border-radius: 23px;
     border-radius: 23px;
-    opacity: .5;
-    filter: alpha(opacity=50);
+    opacity: .4;
+    filter: alpha(opacity=40);
 }
 
 .carousel-control.right {
     right: 15px;
     left: auto;
+}
+
+.more {
+    text-decoration: none;
+}
+
+
+.close-btn {
+    left: 4px;
+    top: 70px;
+    font-size: 25px;
+    line-height: 25px;
+    position: absolute;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    margin-top: -20px;
+    font-weight: 100;
+    color: #666;
+    text-align: center;
+    background: #FFF;
+    border: 3px solid #666;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    opacity: .7;
+    filter: alpha(opacity=70);
 }

@@ -4,7 +4,8 @@ define([
     "router",
     "collection",
     "views/places-preview",
-    "views/map-view"
+    "views/map-view",
+    "handlebars-helpers"
 ], function (Marionette, Backbone, Router, Collection, PlacesPreview, MapView) {
     "use strict";
     var MapApp = Marionette.Application.extend({

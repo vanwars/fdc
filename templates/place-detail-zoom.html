@@ -9,11 +9,27 @@
             {{ extras.price }}
         </h2>
     </div>
-        <p id="twitter-handle"><i class="fa fa-twitter"></i>{{ extras.handle }}</p>
-        <!-- Three curly braces if you don't want to escape HTML -->
-        <p class="food-description">
-            "{{{ caption }}}"
-            <br/>
-            <a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>
-        </p>
+    <p id="social-media-handle">
+        {{#ifequal extras.source "twitter"}}
+            <i class="fa fa-twitter"></i>
+            <a target="_blank" href="https://twitter.com/{{ extras.handle }}">{{ extras.handle }}</a>
+        {{/ifequal}}
+        
+        {{#ifequal extras.source "instagram"}}
+            <i class="fa fa-instagram dark"></i>
+            <a target="_blank" href="https://instagram.com/{{ extras.handle }}">{{ extras.handle }}</a>
+        {{/ifequal}}
+    </p>
+    <!-- Three curly braces if you don't want to escape HTML -->
+    <p class="food-description">
+        "{{{ caption }}}"
+        <br/>
+        <a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>
+    </p>
+    <div class="nav">
+        <a class="carousel-control left previous-place-zoom" href="#">&lsaquo;</a>
+        <a class="carousel-control right next-place-zoom" href="#">&rsaquo;</a>
+    </div>
+    <a class="close-btn" href="#/places/{{id}}">&times;</a>
+
 </div>

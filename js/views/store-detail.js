@@ -11,7 +11,9 @@ define([
         events: {
             'click .zoom': 'zoomToMarker',
             'click .previous-place': 'previousPlace',
-            'click .next-place': 'nextPlace'
+            'click .next-place': 'nextPlace',
+            'click .previous-place-zoom': 'previousPlaceZoom',
+            'click .next-place-zoom': 'nextPlaceZoom'
         },
         template: Handlebars.compile(StoreDetailTemplate),
         initialize: function (opts) {
@@ -23,18 +25,32 @@ define([
                 this.template = Handlebars.compile(StoreDetailTemplate);
             }
         },
-        navigate: function (index) {
+        navigate: function (url, index) {
             var model = this.model.collection.at(index);
-            this.app.router.navigate("places/" + model.get("id"), {trigger: true});
+            this.app.router.navigate(url + model.get("id"), {trigger: true});
+        },
+        previous: function (url) {
+            var i = this.model.collection.indexOf(this.model);
+            this.navigate(url, (i == 0) ? this.model.collection.length - 1 : i - 1);
+        },
+        next: function (url) {
+            var i = this.model.collection.indexOf(this.model);
+            this.navigate(url, (i == this.model.collection.length - 1) ? 0 : i + 1);
         },
         previousPlace: function (e) {
-            var i = this.model.collection.indexOf(this.model);
-            this.navigate((i == 0) ? this.model.collection.length - 1 : i - 1);
+            this.previous("places/");
+            e.preventDefault();
+        },
+        previousPlaceZoom: function (e) {
+            this.previous("places/zoom/");
             e.preventDefault();
         },
         nextPlace: function (e) {
-            var i = this.model.collection.indexOf(this.model);
-            this.navigate((i == this.model.collection.length - 1) ? 0 : i + 1);
+            this.next("places/");
+            e.preventDefault();
+        },
+        nextPlaceZoom: function (e) {
+            this.next("places/zoom/");
             e.preventDefault();
         },
         onShow: function () {
