@@ -1,14 +1,14 @@
 require.config({
     baseUrl: "js",
     paths: {
-        'backbone': 'external/backbone-min',
-        'handlebars': 'external/handlebars.min',
-        'jquery': '//code.jquery.com/jquery-2.1.4',
+        'backbone': '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min',
+        'handlebars': '//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min',
+        'jquery': '//code.jquery.com/jquery-2.2.0.min',
         'jquery.bootstrap': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min',
-        'text': 'external/text',
         'marionette': '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.4/backbone.marionette.min',
         'underscore': '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
-        'mapbox-lib': 'http://api.mapbox.com/mapbox.js/v2.2.3/mapbox'
+        'mapbox-lib': '//api.mapbox.com/mapbox.js/v2.2.3/mapbox',
+        'text': 'external/text'
     },
     shim: {
         'underscore': {
