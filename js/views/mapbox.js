@@ -14,6 +14,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker"],
                 this.collection = opts.collection;
                 this.listenTo(this.collection, 'reset', this.collectionReset);
                 this.listenTo(this.collection, 'filter-applied', this.filterApplied);
+                this.listenTo(this.app.vent, 'load-panel', this.highlightMarker);
                 this.lastScrolled = 0;
                 this.scrollInterval = 1500;
                 this.attachEventHandlers();
@@ -56,14 +57,28 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker"],
                     return;
                 }
                 L.mapbox.accessToken = this.opts.accessToken;
-                this.map = L.mapbox.map('map', this.opts.styleID, {
+                this.map = L.mapbox.map('map', "mapbox.light", {
                     zoomControl: false
                 }).setView(this.opts.center, this.opts.zoom);
+                this.map.reset = true;
                 new L.Control.Zoom({ position: 'topright' }).addTo(this.map);
                 if (this.options.disableZoomScroll) {
                     this.map.scrollWheelZoom.disable();
                 }
+                //this.renderActiveMarker();
                 this.initialized = true;
+            },
+            highlightMarker: function (id) {
+                this.layer.eachLayer(function (marker) {
+                    if (marker.options.id == id) {
+                        marker.setIcon(marker.options.highlightIcon);
+                    } else {
+                        marker.setIcon(marker.options.originalIcon);
+                    }
+                });
+            },
+            renderActiveMarker: function () {
+                this.activeMarker = L.marker(this.getCoords(), this.getProperties());
             },
             renderMarkers: function () {
                 var itemView,
@@ -87,6 +102,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker"],
             fitMapToLayer: function () {
                 if (this.layer) {
                     this.map.fitBounds(this.layer.getBounds());
+                    this.map.reset = true;
                 }
             },
 

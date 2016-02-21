@@ -37,8 +37,8 @@ define([
             this.mapView = new MapView({
                 collection: this.collection,
                 app: this,
-                accessToken: "pk.eyJ1IjoibGF1cmVuYmVuaWNob3UiLCJhIjoiQ1BlZGczRSJ9.EVMieITn7lHNi6Ato9wFwg",
-                styleID: "laurenbenichou.54e91cf8",
+                accessToken: "pk.eyJ1IjoibGciLCJhIjoibWd5aTl2VSJ9.W9ZsT1zQsI9ZP72KtTdZTA",
+                styleID: "lg/cikx1uo6900eh92kl5iy354t1",
                 center: [39.889, -97.114],
                 zoom: 4,
                 disableZoomScroll: true,
@@ -49,6 +49,11 @@ define([
                         iconUrl: 'assets/plate2.png',
                         iconSize: [50, 50],
                         iconAnchor: [25, 25]
+                    },
+                    highlightIcon: {
+                        iconUrl: 'assets/iconhover.png',
+                        iconSize: [100, 100],
+                        iconAnchor: [50, 50]
                     },
                     zoomLevelDetail: 14
                 }

@@ -10,29 +10,35 @@ define(["marionette", "underscore", "mapbox-lib"], function (Marionette, _, L) {
         initialize: function (opts) {
             _.extend(this, opts);
             this.markerOpts = this.markerOpts || {};
+            this.initIcons();
+            this.marker = L.marker(this.getCoords(), this.getProperties());
+            this.marker.on('click', this.markerClick.bind(this));
+        },
+
+        initIcons: function () {
             var factor = 1.5,
                 baseIconURL = 'https://api.mapbox.com/v4/marker/';
-            if (this.markerOpts.icon) {
-                this.icon = L.icon(this.markerOpts.icon);
-            } else {
-                if (this.markerOpts.color) {
-                    this.model.set("color", this.markerOpts.color);
-                }
-                this.icon = L.icon({
-                    iconUrl: baseIconURL + "pin-m+" + (this.model.get("color") || "CCC") + ".png?access_token=" + this.token,
-                    iconRetinaUrl: baseIconURL + "pin-m+" + (this.model.get("color") || "CCC") + "@2x.png?access_token=" + this.token,
-                    iconSize: [30 * factor, 70 * factor],
-                    iconAnchor: [15 * factor, 35 * factor]
-                });
+            if (this.markerOpts.color) {
+                this.model.set("color", this.markerOpts.color);
             }
+            this.icon = L.icon({
+                iconUrl: baseIconURL + "pin-m+" + (this.model.get("color") || "CCC") + ".png?access_token=" + this.token,
+                iconRetinaUrl: baseIconURL + "pin-m+" + (this.model.get("color") || "CCC") + "@2x.png?access_token=" + this.token,
+                iconSize: [30 * factor, 70 * factor],
+                iconAnchor: [15 * factor, 35 * factor]
+            });
             this.highlightIcon = L.icon({
                 iconUrl: baseIconURL + "pin-m+999.png?access_token=" + this.token,
                 iconRetinaUrl: baseIconURL + "pin-m+999@2x.png?access_token=" + this.token,
                 iconSize: [30 * factor, 70 * factor],
                 iconAnchor: [15 * factor, 35 * factor]
             });
-            this.marker = L.marker(this.getCoords(), this.getProperties());
-            this.marker.on('click', this.markerClick.bind(this));
+            if (this.markerOpts.icon) {
+                this.icon = L.icon(this.markerOpts.icon);
+            }
+            if (this.markerOpts.highlightIcon) {
+                this.highlightIcon = L.icon(this.markerOpts.highlightIcon);
+            }
         },
 
         getCoords: function () {
@@ -46,7 +52,9 @@ define(["marionette", "underscore", "mapbox-lib"], function (Marionette, _, L) {
             return {
                 id: this.model.get("id"),
                 name: this.model.get("name"),
-                "icon": this.icon
+                "icon": this.icon,
+                "originalIcon": this.icon,
+                "highlightIcon": this.highlightIcon
             };
         },
 
@@ -66,10 +74,11 @@ define(["marionette", "underscore", "mapbox-lib"], function (Marionette, _, L) {
         },
 
         centerMarker: function () {
-            console.log("centerMarker");
+            this.marker.setIcon(this.highlightIcon);
             var zoom = this.map.getZoom();
-            if (zoom < this.markerOpts.zoomLevelDetail) {
+            if (zoom < this.markerOpts.zoomLevelDetail && this.map.reset) {
                 zoom = this.markerOpts.zoomLevelDetail;
+                this.map.reset = false;
             }
             this.map.setView(this.getCoords(), zoom, { animation: true });
         }
