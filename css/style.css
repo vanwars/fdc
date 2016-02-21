@@ -38,6 +38,11 @@ h2 {
     font-size: 1.4em;
 }
 
+h2 a {
+    color: rgb(32, 63, 84);
+    text-decoration: none;
+}
+
 h3 {
     padding: 7px 11px 6px;
     margin: 0;
@@ -114,6 +119,7 @@ img {
     top: 0px;
     min-height: 100%;
     background: #FFF;
+    z-index: 1000;
 }
 
 .top-third {

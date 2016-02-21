@@ -102,6 +102,9 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker"],
             fitMapToLayer: function () {
                 if (this.layer) {
                     this.map.fitBounds(this.layer.getBounds());
+                    this.layer.eachLayer(function (marker) {
+                        marker.setIcon(marker.options.originalIcon);
+                    });
                     this.map.reset = true;
                 }
             },

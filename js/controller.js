@@ -9,6 +9,8 @@ define([
         storeDetail: function (id) {
             console.log("regular");
             this.app.vent.trigger("load-panel", id, false);
+            this.app.mainRegion.$el.hide();
+            this.app.mapRegion.$el.show();
         },
         storeDetailMobile: function (id) {
             console.log("mobile");
