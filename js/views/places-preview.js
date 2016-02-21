@@ -1,8 +1,8 @@
 define(["marionette",
         "underscore",
         "handlebars",
-        "text!/templates/thumb.html",
-        "text!/templates/thumb-list.html"],
+        "text!../../templates/thumb.html",
+        "text!../../templates/thumb-list.html"],
     function (Marionette, _, Handlebars, ThumbTemplate, ListTemplate) {
         'use strict';
         var ThumbView = Marionette.CompositeView.extend({

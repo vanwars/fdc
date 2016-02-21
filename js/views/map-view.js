@@ -2,7 +2,7 @@ define(["marionette",
         "handlebars",
         "views/mapbox",
         "views/store-detail",
-        "text!/templates/map-page.html"],
+        "text!../../templates/map-page.html"],
     function (Marionette, Handlebars, MapboxView, StoreDetail, MapPageTemplate) {
         'use strict';
         var MapLayout = Marionette.LayoutView.extend({

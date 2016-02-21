@@ -3,8 +3,8 @@ define([
     "underscore",
     "handlebars",
     "marionette",
-    "text!/templates/place-detail.html",
-    "text!/templates/place-detail-zoom.html"
+    "text!../../templates/place-detail.html",
+    "text!../../templates/place-detail-zoom.html"
 ], function ($, _, Handlebars, Marionette, StoreDetailTemplate, StoreDetailMobileTemplate) {
     "use strict";
     var StoreDetail = Marionette.ItemView.extend({
