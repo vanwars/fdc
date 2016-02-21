@@ -15,6 +15,7 @@ define(["marionette",
                 this.opts = opts;
                 Marionette.LayoutView.prototype.initialize.call(this);
                 this.listenTo(this.app.vent, 'load-panel', this.loadStorePanel);
+                this.listenTo(this.app.vent, 'zoom-to-extents', this.hideStorePanel);
             },
             template: function () {
                 return Handlebars.compile(MapPageTemplate);
@@ -30,10 +31,16 @@ define(["marionette",
                     isMobile: isMobile
                 });
                 this.leftPanelRegion.show(this.storeView);
+                this.leftPanelRegion.$el.show();
                 if (isMobile) {
                     this.mapboxRegion.$el.hide();
                 } else {
                     this.mapboxRegion.$el.show();
+                }
+            },
+            hideStorePanel: function () {
+                if (this.leftPanelRegion.$el) {
+                    this.leftPanelRegion.$el.hide();
                 }
             }
         });

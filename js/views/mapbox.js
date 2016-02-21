@@ -20,7 +20,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker"],
             },
             attachEventHandlers: function () {
                 var that = this;
-                this.listenTo(this.app.vent, 'full-screen', this.fitMapToLayer);
+                this.listenTo(this.app.vent, 'zoom-to-extents', this.fitMapToLayer);
                 $(window).on('DOMMouseScroll mousewheel', function (e) {
                     that.handleScroll(e);
                 });

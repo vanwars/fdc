@@ -8,13 +8,9 @@ define([
 ], function ($, _, Handlebars, Marionette, StoreDetailTemplate, StoreDetailMobileTemplate) {
         "use strict";
         var StoreDetail = Marionette.ItemView.extend({
-            /*model: null,
             events: {
                 'click .zoom': 'zoomToMarker'
             },
-            modelEvents: {
-                'change': 'render'
-            },*/
             template: Handlebars.compile(StoreDetailTemplate),
             initialize: function (opts) {
                 _.extend(this, opts);
@@ -24,11 +20,10 @@ define([
                 } else {
                     this.template = Handlebars.compile(StoreDetailTemplate);
                 }
-                //this.render();
             },
             onShow: function () {
-                //this.render();
-            }/*
+                this.model.trigger("center-marker");
+            },
             zoomToMarker: function (e) {
                 var zoom = $(e.target).attr("zoom-level");
                 if (!zoom) {
@@ -36,7 +31,7 @@ define([
                 }
                 this.model.trigger('zoom-to-marker', zoom);
                 e.preventDefault();
-            }*/
+            }
         });
         return StoreDetail;
     });

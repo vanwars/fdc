@@ -51,6 +51,7 @@ define(["marionette", "underscore", "mapbox-lib"], function (Marionette, _, L) {
         },
 
         markerClick: function (e) {
+            console.log("markerClick");
             var id = e.target.options.id,
                 url = this.markerOpts.clickURL;
             if (url) {
@@ -60,10 +61,12 @@ define(["marionette", "underscore", "mapbox-lib"], function (Marionette, _, L) {
         },
 
         zoomTo: function (zoom) {
+            console.log("zoomTo", zoom);
             this.map.setView(this.getCoords(), zoom, { animation: true });
         },
 
         centerMarker: function () {
+            console.log("centerMarker");
             var zoom = this.map.getZoom();
             if (zoom < this.markerOpts.zoomLevelDetail) {
                 zoom = this.markerOpts.zoomLevelDetail;

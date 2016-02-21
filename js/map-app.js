@@ -50,7 +50,7 @@ define([
                         iconSize: [50, 50],
                         iconAnchor: [25, 25]
                     },
-                    zoomLevelDetail: 10
+                    zoomLevelDetail: 14
                 }
             });
 

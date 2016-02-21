@@ -20,7 +20,7 @@ define([
         },
         explore: function () {
             console.log("explore");
-            this.app.vent.trigger("full-screen");
+            this.app.vent.trigger("zoom-to-extents");
             this.app.mainRegion.$el.hide();
             this.app.mapRegion.$el.show();
         }
