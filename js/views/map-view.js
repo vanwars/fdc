@@ -28,7 +28,8 @@ define(["marionette",
                 var model = this.opts.collection.get(id);
                 this.storeView = new StoreDetail({
                     model: model,
-                    isMobile: isMobile
+                    isMobile: isMobile,
+                    app: this.app
                 });
                 this.leftPanelRegion.show(this.storeView);
                 this.leftPanelRegion.$el.show();

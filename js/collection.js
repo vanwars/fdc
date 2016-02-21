@@ -53,8 +53,8 @@ define(["underscore", "backbone", "lib/sqlParser"],
                 this.trigger('filter-applied');
             },
 
-            sortByAttribute: function (attribute) {
-                return attribute;
+            comparator: function (collection) {
+                return collection.get('extras').order;
             }
 
         });

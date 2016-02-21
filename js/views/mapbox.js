@@ -43,6 +43,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker"],
                 }
             },
             collectionReset: function () {
+                //console.log(this.collection);
                 this.renderMarkers();
             },
             filterApplied: function () {

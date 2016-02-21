@@ -23,11 +23,19 @@ define([
                 this.template = Handlebars.compile(StoreDetailTemplate);
             }
         },
-        previousPlace: function () {
-            this.app.vent.trigger('previous-place', { current: this.model.id });
+        navigate: function (index) {
+            var model = this.model.collection.at(index);
+            this.app.router.navigate("places/" + model.get("id"), {trigger: true});
         },
-        nextPlace: function () {
-            this.app.vent.trigger('next-place', { current: this.model.id });
+        previousPlace: function (e) {
+            var i = this.model.collection.indexOf(this.model);
+            this.navigate((i == 0) ? this.model.collection.length - 1 : i - 1);
+            e.preventDefault();
+        },
+        nextPlace: function (e) {
+            var i = this.model.collection.indexOf(this.model);
+            this.navigate((i == this.model.collection.length - 1) ? 0 : i + 1);
+            e.preventDefault();
         },
         onShow: function () {
             this.model.trigger("center-marker");
