@@ -3,9 +3,9 @@ define([
     "backbone",
     "router",
     "collection",
-    "views/thumb-view",
+    "views/places-preview",
     "views/map-view"
-], function (Marionette, Backbone, Router, Collection, ThumbView, MapView) {
+], function (Marionette, Backbone, Router, Collection, PlacesPreview, MapView) {
     "use strict";
     var MapApp = Marionette.Application.extend({
         regions: {
@@ -30,7 +30,7 @@ define([
             this.collection.fetch({ reset: true });
 
             //initialize views:
-            this.mainView = new ThumbView({
+            this.mainView = new PlacesPreview({
                 app: this,
                 collection: this.collection
             });

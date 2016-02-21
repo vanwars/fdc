@@ -51,6 +51,10 @@ define(["underscore", "backbone", "lib/sqlParser"],
                     model.set("hidden", false);
                 });
                 this.trigger('filter-applied');
+            },
+
+            sortByAttribute: function (attribute) {
+                return attribute;
             }
 
         });

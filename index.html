@@ -8,47 +8,19 @@
 </head>
 <body>
 
-    <div class="map-page">
-        <div id="nav-bar" class="nav-bar">
-            <h2><img src="assets/logoDark.png" id="logo"> Youth Radio</h2>
-            <a id="search-button-top" class="search-button map-view" href="#/explore">explore</a>
-        </div>
-        <div id="map"></div>
-        <div id="left-panel"></div>
-    </div>
-    <div class="splash-page">
-        <div class="top-third">
-            <div id="nav-bar" class="nav-bar">
-                <h2><img src="assets/logoDark.png" id="logo"> Youth Radio</h2>
-            </div>
-            <div class="title-text">
-                <h1><span>5 DOLLAR CHALLENGE</span></h1>
-                <p>
-                    Danish icing cake dessert tiramisu macaroon. Liquorice
-                    danish biscuit biscuit jelly-o brownie.
-                </p>
-                <a class="search-button" href="#/explore">explore</a>
-            </div>
-        </div>
-        <div class="bottom-two-thirds"></div>
-    </div>
+    <div class="map-page"></div>
+
+    <div class="splash-page"></div>
     
     <!-- footer -->
     <div id="bottom-nav">
-        <span id="twitter-cta"><i class="fa fa-twitter"></i><i class="fa fa-instagram"></i><span>What $5 deal can you find in your city?</span></span>
+        <span id="twitter-cta">
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <span>What $5 deal can you find in your city?</span>
+        </span>
     </div>
     
-
-    <script src="http://code510.org/wdk/js/external/require.js"></script>
-    <script src="require-config.js" type="text/javascript"></script>
-    <script src="functions.js" type="text/javascript"></script>
-    <script>
-        require(["http://code510.org/wdk/js/init.js", "config.js"], function(App) {
-            App.start({
-                pages: pages,
-                datasets: datasets
-            });
-        });
-    </script>
+    <script data-main="js/require-config.js" src="js/external/require.js"></script>
 </body>
 </html>
