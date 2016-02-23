@@ -1,14 +1,9 @@
 <div class="food-detail mobile-sheet">
     <div class="zoom-photo-container" style="background-image: url('{{ path_medium }}');">
-        <svg id="color-fill" height="110" width="210">
-            <polyline class="tag-outline" points="360,172 70,172 15,92 70,2 360,2"></polyline>
-            <polygon class="tag" points="360,162 74,162 25,93 74,12 360,12"></polygon>
-        </svg>
-        <h2>
-            {{ name }}<br />
-            {{ extras.price }}
-        </h2>
     </div>
+    <h2 class = "food-name">
+        {{ name }} - <span class = "light">{{ extras.price }}</span>
+    </h2>
     <p id="social-media-handle">
         {{#ifequal extras.source "twitter"}}
             <i class="fa fa-twitter"></i>
@@ -23,7 +18,7 @@
     <!-- Three curly braces if you don't want to escape HTML -->
     <p class="food-description">
         "{{{ caption }}}"
-        <br/>
+        <br><br>
         <a href="#" class="zoom" zoom-level="18">zoom to restaurant</a>
     </p>
     <div class="nav">
