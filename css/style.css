@@ -53,7 +53,7 @@ h2 {
 
 
 h2.splash{
-    margin:14px;
+    margin:10px;
 }
 
 h3 {
@@ -566,5 +566,5 @@ svg {
 
 .fa-home {
    color: #FFF;
-   float: right;
+   float: left;
 }
