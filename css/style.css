@@ -64,6 +64,7 @@ h3 {
     font-family: 'ProximaNova', sans-serif;
     font-weight: bold;
     font-size: 1.4em;
+    text-align: center;
 }
 
 h4{
@@ -372,7 +373,7 @@ svg {
         width: 380px;
         margin-left:10px;
         top: 56px;
-        height:500px;
+        max-height:520px;
         position: absolute;
         overflow: scroll;
     }
