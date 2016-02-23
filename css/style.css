@@ -562,3 +562,8 @@ svg {
     opacity: .7;
     filter: alpha(opacity=70);
 }
+
+.fa-home {
+   color: #FFF;
+   float: right;
+}
