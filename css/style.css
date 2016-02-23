@@ -124,6 +124,14 @@ img {
     padding: 2px 10px 4px;
     margin: 7px;
 }
+h3 .search-button {
+    font-size: 18px;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 5px;
+    padding: 2px 10px 4px;
+    margin: 0px;
+}
 
 .map-view {
     float: right;
@@ -360,7 +368,7 @@ svg {
     .mobile-layout{
          display:none;
     }
-    .info-box{
+    .info-box {
         width: 380px;
         margin-left:10px;
         top: 56px;
@@ -368,7 +376,7 @@ svg {
         position: absolute;
         overflow: scroll;
     }
-    #bottom-nav{
+    #bottom-nav {
         width: 100%;
     }
 }
@@ -423,15 +431,6 @@ svg {
     .title-text{
         padding-top:60px;
     }
-
-    #twitter-cta span, #instagram-cta span{
-        font-size:0; 
-    }
-    #bottom-nav{
-        position: fixed;
-        right: 0px;
-        width: calc(100% - 150px);
-    }
 }
 
 
@@ -475,11 +474,12 @@ svg {
     bottom: 0px;
     z-index: 1000;
     font-family:'Cubano';
-    text-align:right;
+    text-align: right;
 }
-#twitter-cta span{
+#twitter-cta span {
     line-height: 1.6; 
-    padding-right: 10px
+    padding-right: 10px;
+    display: inline-block;
 }
 #instagram-cta {
     float: right;
@@ -492,7 +492,17 @@ svg {
     float:right;
 }
 
-
+@media (max-width: 700px) {
+    #twitter-cta span, #instagram-cta span{
+        /*font-size:0;*/
+        display: none;
+    }
+    #bottom-nav {
+        position: fixed;
+        right: 0px;
+        background-color: transparent;
+    }
+}
 
 
 
