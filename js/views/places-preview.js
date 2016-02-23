@@ -41,7 +41,7 @@ define(["marionette",
             },
 
             onBeforeRender: function () {
-                this.pickN(4);
+                this.pickN(3);
             },
 
             filter: function (child, index, collection) {
