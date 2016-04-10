@@ -10,10 +10,10 @@ define(["marionette",
             childView: Marionette.ItemView.extend({
                 template: Handlebars.compile(ThumbTemplate),
                 tagName: "div",
-                className: "inner-grid"
+                className: "column"
             }),
 
-            childViewContainer: ".outer-grid",
+            childViewContainer: ".row",
             selectedIndices: [],
             initialize: function (opts) {
                 _.extend(this, opts);
