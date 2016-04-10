@@ -386,8 +386,8 @@ svg {
     .info-box {
         width: 380px;
         margin-left:10px;
-        top: 56px;
-        max-height: calc(100vh - 112px);
+        top: 52px;
+        max-height: calc(100vh - 108px);
         position: absolute;
         overflow: scroll;
     }
