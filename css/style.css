@@ -161,7 +161,7 @@ h3.search-button {
 #map {
     width: 100%;
     background-color: #EEE;
-    height: calc( 100vh - 55px );
+    height: calc( 100vh - 75px );
     top:-3px;
 }
 

@@ -1,4 +1,4 @@
-define(["marionette", "underscore", "mapbox-lib"], function (Marionette, _, L) {
+define(["jquery", "marionette", "underscore", "mapbox-lib"], function ($, Marionette, _, L) {
     "use strict";
     var Marker = Marionette.ItemView.extend({
         model: null,
@@ -68,17 +68,25 @@ define(["marionette", "underscore", "mapbox-lib"], function (Marionette, _, L) {
         },
 
         zoomTo: function (zoom) {
-            console.log("zoomTo", zoom);
+            //console.log("zoomTo", zoom);
             this.map.setView(this.getCoords(), zoom, { animation: true });
         },
 
         centerMarker: function () {
-            var zoom = this.map.getZoom();
+            var zoom, target, screenW;
+            zoom = this.map.getZoom();
+            screenW = $(window).width();
             if (zoom < this.markerOpts.zoomLevelDetail && this.map.reset) {
                 zoom = this.markerOpts.zoomLevelDetail;
                 this.map.reset = false;
             }
-            this.map.setView(this.getCoords(), zoom, { animation: true });
+            if (screenW > 700) {
+                target = this.map.project(this.getCoords(), zoom).subtract([150, 0]);
+                target = this.map.unproject(target, zoom);
+                this.map.setView(target, zoom, { animation: true });
+            } else {
+                this.map.setView(this.getCoords(), zoom, { animation: true });
+            }
         }
     });
     return Marker;
