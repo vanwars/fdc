@@ -50,7 +50,7 @@ define([
                 hammerZoom.on('swipeleft', function (ev) {
                     that.nextPlaceZoom();
                 });
-                hammerMain.on('swiperight', function (ev) {
+                hammerZoom.on('swiperight', function (ev) {
                     that.previousPlaceZoom();
                 });
             }
