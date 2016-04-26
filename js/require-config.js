@@ -36,15 +36,12 @@ require.config({
         },
         'jquery-hammerjs': {
             deps: ['jquery', 'hammerjs']
-        },
-        'backbone-hammer': {
-            deps: ['backbone', 'underscore', 'jquery-hammerjs']
         }
     },
     urlArgs: "bust=" + (new Date()).getTime()
 });
 
-require(['backbone-hammer'], function () {
+//require(['backbone-hammer'], function () {
     require(
         ["jquery", "js/map-app.js"],
         function ($, MapApp) {
@@ -56,6 +53,6 @@ require(['backbone-hammer'], function () {
             });
         }
     );
-});
+//});
 
 
