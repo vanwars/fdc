@@ -8,7 +8,10 @@ require.config({
         'marionette': '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.4/backbone.marionette.min',
         'underscore': '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
         'mapbox-lib': '//api.mapbox.com/mapbox.js/v2.2.3/mapbox',
-        'text': 'external/text'
+        'text': 'external/text',
+        'hammerjs': 'external/hammer.min',
+        'jquery-hammerjs': 'external/jquery.hammer',
+        'backbone-hammer': 'external/backbone.hammer'
     },
     shim: {
         'underscore': {
@@ -30,21 +33,29 @@ require.config({
         },
         'jquery.bootstrap': {
             deps: ['jquery']
+        },
+        'jquery-hammerjs': {
+            deps: ['jquery', 'hammerjs']
+        },
+        'backbone-hammer': {
+            deps: ['backbone', 'underscore', 'jquery-hammerjs']
         }
     },
     urlArgs: "bust=" + (new Date()).getTime()
 });
 
-require(
-    ["jquery", "js/map-app.js"],
-    function ($, MapApp) {
-        'use strict';
-        $(function () {
-            window.location.hash = ''; //make sure the page initializes on the first page...
-            var mapApp = new MapApp();
-            mapApp.start();
-        });
-    }
-);
+require(['backbone-hammer'], function () {
+    require(
+        ["jquery", "js/map-app.js"],
+        function ($, MapApp) {
+            'use strict';
+            $(function () {
+                window.location.hash = ''; //make sure the page initializes on the first page...
+                var mapApp = new MapApp();
+                mapApp.start();
+            });
+        }
+    );
+});
 
 
