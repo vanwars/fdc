@@ -52,7 +52,7 @@ define([
                         iconAnchor: [25, 25]
                     },
                     highlightIcon: {
-                        iconUrl: 'assets/iconhover.png',
+                        iconUrl: 'assets/iconselected.png',
                         iconSize: [100, 100],
                         iconAnchor: [50, 50]
                     },

@@ -83,13 +83,6 @@ h4{
     font-size: 24px;
 }
 
-#home-title{
-    margin: 4px 10px;
-}
-
-#map-title{
-    margin:1px 18px;
-}
 
 h4 a{
     color: #e2495b;
@@ -105,6 +98,14 @@ p {
     font-family: 'ProximaNova', sans-serif;
     font-weight: 400;
     color: white;
+}
+
+#home-title{
+    margin: 4px 10px;
+}
+
+#map-title{
+    margin:1px 8px;
 }
 
 .light{
@@ -124,25 +125,6 @@ img {
     vertical-align: middle;
 }
 
-
-.search-button {
-    background-color: #e8700d;
-    cursor: pointer;
-    color: #ffffff;
-    text-decoration: none;
-    border-style: none;
-    border-radius: 5px;
-    padding: 2px 10px 3px;
-    margin: 5px 7px 8px;
-}
-h3.search-button {
-    font-size: 18px;
-    text-decoration: none;
-    border-style: none;
-    border-radius: 5px;
-    padding: 2px 10px 4px;
-    margin: 0px;
-}
 
 .mobile-layout > h3{
     text-align: center;
@@ -283,15 +265,31 @@ h3.search-button {
 
 
 
+#search-button {
+    background-color: #e8700d;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin: 5px 7px 8px;
+}
+
+
+
 /********************* Food Detail Page (templates/place-detail.html) *********************/
-.info-box {
+.food-detail {
     background-color: #fff;
     display: none;
     overflow: hidden;
     z-index: 1000;
     box-shadow:0 0 14px rgba(94,112,125,0.2);
+    display: block;
+    width: 100%;
+    text-decoration: none;
 }
-.info-box > div {
+.food-detail > div {
     -webkit-animation: fadein 2s;
        -moz-animation: fadein 2s;
         -ms-animation: fadein 2s;
@@ -319,7 +317,7 @@ h3.search-button {
     to   { opacity: 1; }
 }
 
-.info-box h2 {
+.food-detail h2 {
     line-height: 1.2em;
     margin:14px;
 }
@@ -346,11 +344,6 @@ svg {
     stroke-width: 2;
 }
 
-.food-detail {
-    display: block;
-	width: 100%;
-    text-decoration: none;
-}
 
 #social-media-handle .fa-instagram.dark {
     color: #585858;
@@ -382,13 +375,23 @@ svg {
     margin: 0;
 }
 
+#search-button-top{
+    background-color: #e8700d;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 5px;
+    padding:2px 10px 3px;
+    margin: 5px 7px 8px;
+}
 
 
 @media (min-width: 700px) {
     .mobile-layout{
          display:none;
     }
-    .info-box {
+    .food-detail{
         width: 380px;
         margin-left:10px;
         top: 48px;
@@ -421,11 +424,12 @@ svg {
         display:none;
         padding:0;
     }
-    .info-box{
+    .food-detail{
         width: 100%;
         margin-left:0;
         position:fixed;
         bottom:0px;
+        border-style:none;
     }
     .photo-container{
         display: inline-block;
@@ -447,9 +451,6 @@ svg {
         font-size:1em;
         padding:14px;
         text-align:center;
-    }
-    .info-box{
-        border-style:none;
     }
     .title-text{
         padding-top:60px;
@@ -501,7 +502,7 @@ svg {
 #bottom-nav {
     background-color: #fff;
     color: #585858;
-    padding: 10px 20px;
+    padding: 10px;
     position: fixed;
     bottom: 0px;
     z-index: 1000;
