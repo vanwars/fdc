@@ -80,7 +80,7 @@ h4{
     color: #1e9da3;
     font-weight: bold;
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 
@@ -117,6 +117,11 @@ a { color: #1e9da3; }
 img {
     width: 100%;
     height: auto;
+}
+
+footer{
+    padding-top:40px;
+    color:#949494;
 }
 
 #logo {
@@ -382,7 +387,7 @@ svg {
     text-decoration: none;
     border-style: none;
     border-radius: 5px;
-    padding:2px 10px 3px;
+    padding:3px 10px;
     margin: 5px 7px 8px;
 }
 
