@@ -13,6 +13,7 @@ define([
         events: {
             'click .zoom': 'zoomToMarker',
             'click .more': 'showSheet',
+            'click .close-btn': 'hideSheet',
             'click .previous-place': 'previous',
             'click .next-place': 'next',
             'click .previous-place-zoom': 'previous',

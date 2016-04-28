@@ -535,6 +535,9 @@ svg {
 /**************************/
 /* New Styles Sarah Added */
 /**************************/
+.nav {
+    display: none;
+}
 .carousel-control {
     position: absolute;
     text-decoration: none;
