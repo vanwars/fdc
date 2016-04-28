@@ -284,17 +284,20 @@ footer{
 
 
 /********************* Food Detail Page (templates/place-detail.html) *********************/
-.food-detail {
+.info-box{
     background-color: #fff;
     display: none;
     overflow: hidden;
     z-index: 1000;
     box-shadow:0 0 14px rgba(94,112,125,0.2);
+}
+
+.food-detail {
     display: block;
     width: 100%;
     text-decoration: none;
 }
-.food-detail > div {
+.info-box > div {
     -webkit-animation: fadein 2s;
        -moz-animation: fadein 2s;
         -ms-animation: fadein 2s;
@@ -322,7 +325,7 @@ footer{
     to   { opacity: 1; }
 }
 
-.food-detail h2 {
+.info-box h2 {
     line-height: 1.2em;
     margin:14px;
 }
@@ -396,7 +399,7 @@ svg {
     .mobile-layout{
          display:none;
     }
-    .food-detail{
+    .info-box{
         width: 380px;
         margin-left:10px;
         top: 48px;
@@ -429,7 +432,7 @@ svg {
         display:none;
         padding:0;
     }
-    .food-detail{
+    .info-box{
         width: 100%;
         margin-left:0;
         position:fixed;
