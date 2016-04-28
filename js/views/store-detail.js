@@ -28,30 +28,31 @@ define([
         },
         onRender: function () {
             this.addSwipeHandlers();
+            this.isFullScreen();
+        },
+        isFullScreen: function () {
+            return this.$el.find(".mobile-sheet").length > 0;
         },
         addSwipeHandlers: function () {
             //http://stackoverflow.com/questions/30079136/how-to-get-hammer-js-to-work-with-backbone
             //https://github.com/wookiehangover/backbone.hammer/issues/2
-            var that = this, mainDiv, zoomDiv, hammerMain, hammerZoom;
-            mainDiv = this.$el.find('.food-detail-generic').get(0);
-            zoomDiv = this.$el.find('.food-detail-mobile').get(0);
-
-            if (mainDiv) {
-                hammerMain = new Hammer(mainDiv),
-                hammerMain.on('swipeleft', function (ev) {
-                    that.nextPlace();
+            var that = this, div, hammerMain;
+            div = this.$el.find('.food-detail').get(0);
+            if (div) {
+                hammerMain = new Hammer(div);
+                hammerMain.on('swipeleft', function () {
+                    if (that.isFullScreen()) {
+                        that.nextPlaceZoom();
+                    } else {
+                        that.nextPlace();
+                    }
                 });
-                hammerMain.on('swiperight', function (ev) {
-                    that.previousPlace();
-                });
-            }
-            if (zoomDiv) {
-                hammerZoom = new Hammer(zoomDiv);
-                hammerZoom.on('swipeleft', function (ev) {
-                    that.nextPlaceZoom();
-                });
-                hammerZoom.on('swiperight', function (ev) {
-                    that.previousPlaceZoom();
+                hammerMain.on('swiperight', function () {
+                    if (that.isFullScreen()) {
+                        that.previousPlaceZoom();
+                    } else {
+                        that.previousPlace();
+                    }
                 });
             }
         },

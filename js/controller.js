@@ -7,6 +7,7 @@ define([
             this.app = options.app;
         },
         storeDetail: function (id) {
+            //todo: move this to store detail:
             console.log('storeDetail');
             this.app.vent.trigger("load-panel", id, false);
             this.app.mainRegion.$el.hide();

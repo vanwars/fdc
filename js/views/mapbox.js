@@ -20,15 +20,16 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 this.attachEventHandlers();
             },
             attachEventHandlers: function () {
-                var that = this;
+                //var that = this;
                 this.listenTo(this.app.vent, 'zoom-to-extents', this.fitMapToLayer);
-                $(window).on('DOMMouseScroll mousewheel', function (e) {
+                /*$(window).on('DOMMouseScroll mousewheel', function (e) {
                     that.handleScroll(e);
-                });
+                });*/
             },
             onShow: function () {
                 this.initMap();
             },
+            /*,
             handleScroll: function (e) {
                 e = window.event || e;
                 var wheelDelta = e.wheelDelta,
@@ -42,7 +43,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                         console.log("up", delta);
                     }
                 }
-            },
+            }*/
             collectionReset: function () {
                 //console.log(this.collection);
                 this.renderMarkers();
