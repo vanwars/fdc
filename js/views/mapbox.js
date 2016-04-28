@@ -1,4 +1,4 @@
-define(["jquery", "marionette", "mapbox-lib", "views/marker"],
+define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"],
     function ($, Marionette, L, MarkerView) {
         "use strict";
         var MapboxView = Marionette.View.extend({
@@ -86,7 +86,14 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker"],
                 if (this.layer != null) {
                     this.map.removeLayer(this.layer);
                 }
-                this.layer = new L.FeatureGroup();
+                console.log(that.marker);
+                this.layer = L.markerClusterGroup({
+                    iconCreateFunction: function (cluster) {
+                        return L.icon(that.marker.icon);
+                    },
+                    maxClusterRadius: 50
+                });
+                //this.layer = new L.FeatureGroup();
                 this.collection.each(function (model) {
                     itemView = new MarkerView({
                         map: that.map,
