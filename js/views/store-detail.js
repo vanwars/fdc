@@ -48,7 +48,9 @@ define([
             var that = this, div, hammerMain;
             div = this.$el.find('.food-detail').get(0);
             if (div) {
-                hammerMain = new Hammer(div);
+                hammerMain = new Hammer(div, {
+                    touchAction: 'pan-x'
+                });
                 hammerMain.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
                 hammerMain.on('swipeleft', function () {
                     that.next();
