@@ -91,7 +91,7 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                     iconCreateFunction: function (cluster) {
                         return L.icon(that.marker.icon);
                     },
-                    maxClusterRadius: 20
+                    maxClusterRadius: 30
                 });
                 //this.layer = new L.FeatureGroup();
                 this.collection.each(function (model) {
