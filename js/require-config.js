@@ -8,6 +8,7 @@ require.config({
         'marionette': '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.4/backbone.marionette.min',
         'underscore': '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
         'mapbox-lib': '//api.mapbox.com/mapbox.js/v2.2.3/mapbox',
+        'marker-clusterer': 'external/leaflet.markercluster-src',
         'text': 'external/text',
         'hammerjs': 'external/hammer.min',
         'jquery-hammerjs': 'external/jquery.hammer',
@@ -19,6 +20,10 @@ require.config({
         },
         'mapbox-lib': {
             exports: 'L'
+        },
+        'marker-clusterer': {
+            deps: [ "mapbox-lib" ],
+            exports: "L"
         },
         'backbone': {
             deps: [ "jquery", "underscore" ],
