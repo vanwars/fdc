@@ -420,10 +420,10 @@ svg {
 
     #title-text{
         width:100%;
-        padding:0px;
+        padding-top:80px;
     }
     h1{
-        font-size:2.8em;
+        font-size:1.8em;
     }
     .photo-container svg{
         visibility:hidden;
@@ -461,10 +461,19 @@ svg {
         text-align:center;
     }
     .title-text{
-        padding-top:60px;
+        padding-top:80px;
     }
     .carousel-control{
         top:40%;
+    }
+    .title-text > p{
+        font-size:.9em;
+    }
+    .container>h2{
+        font-size:1.4em;
+    }
+    #home-title{
+        font-size:1em;
     }
 }
 
