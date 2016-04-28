@@ -46,11 +46,13 @@ define([
             //http://stackoverflow.com/questions/30079136/how-to-get-hammer-js-to-work-with-backbone
             //https://github.com/wookiehangover/backbone.hammer/issues/2
             var that = this, div, hammerMain;
+            //idea: if fullscreen, div should be image
             div = this.$el.find('.food-detail').get(0);
+            if (this.isFullScreen) {
+                div = this.$el.find('.zoom-photo-container').get(0);
+            }
             if (div) {
-                hammerMain = new Hammer(div, {
-                    touchAction: 'pan-x'
-                });
+                hammerMain = new Hammer(div);
                 hammerMain.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
                 hammerMain.on('swipeleft', function () {
                     that.next();
