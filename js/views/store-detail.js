@@ -12,7 +12,7 @@ define([
     var StoreDetail = Marionette.ItemView.extend({
         events: {
             'click .zoom': 'zoomToMarker',
-            'click .more': 'showSheet',
+            'click #social-media-comment': 'showSheet',
             'click .close-btn': 'hideSheet',
             'click .previous-place': 'previous',
             'click .next-place': 'next',
@@ -30,6 +30,7 @@ define([
             }
         },
         showSheet: function (e) {
+            if ($(document).width() > 650) { return; }
             this.app.vent.trigger('load-panel', this.model.get("id"), true);
             if (e) { e.preventDefault(); }
         },
