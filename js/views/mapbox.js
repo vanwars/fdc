@@ -22,30 +22,11 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
             attachEventHandlers: function () {
                 //var that = this;
                 this.listenTo(this.app.vent, 'zoom-to-extents', this.fitMapToLayer);
-                /*$(window).on('DOMMouseScroll mousewheel', function (e) {
-                    that.handleScroll(e);
-                });*/
             },
             onShow: function () {
                 this.initMap();
             },
-            /*,
-            handleScroll: function (e) {
-                e = window.event || e;
-                var wheelDelta = e.wheelDelta,
-                    detail = (e.originalEvent ? -e.originalEvent.detail : null),
-                    delta = Math.max(-1, Math.min(1, (wheelDelta || detail)));
-                if (($.now() - this.lastScrolled) > this.scrollInterval) {
-                    this.lastScrolled = $.now();
-                    if (delta < 0) {
-                        console.log("down", delta);
-                    } else {
-                        console.log("up", delta);
-                    }
-                }
-            }*/
             collectionReset: function () {
-                //console.log(this.collection);
                 this.renderMarkers();
             },
             filterApplied: function () {
@@ -66,7 +47,6 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 if (this.options.disableZoomScroll) {
                     this.map.scrollWheelZoom.disable();
                 }
-                //this.renderActiveMarker();
                 this.initialized = true;
             },
             highlightMarker: function (id) {
@@ -87,7 +67,6 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                 if (this.layer != null) {
                     this.map.removeLayer(this.layer);
                 }
-                console.log(that.marker);
                 this.layer = L.markerClusterGroup({
                     iconCreateFunction: function (cluster) {
                         return L.icon(that.marker.icon);

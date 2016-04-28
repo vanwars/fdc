@@ -24,16 +24,16 @@ define(["marionette",
                 this.mapboxView = new MapboxView(this.opts);
                 this.mapboxRegion.show(this.mapboxView);
             },
-            loadStorePanel: function (id, isMobile) {
+            loadStorePanel: function (id, isFullScreen) {
                 var model = this.opts.collection.get(id);
                 this.storeView = new StoreDetail({
                     model: model,
-                    isMobile: isMobile,
+                    isFullScreen: isFullScreen,
                     app: this.app
                 });
                 this.leftPanelRegion.show(this.storeView);
                 this.leftPanelRegion.$el.show();
-                if (isMobile) {
+                if (isFullScreen) {
                     this.mapboxRegion.$el.hide();
                 } else {
                     this.mapboxRegion.$el.show();

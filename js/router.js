@@ -9,7 +9,7 @@ define([
         appRoutes: {
             '': 'home',
             'explore': 'explore',
-            'places/zoom/:id': 'storeDetailMobile',
+            'places/zoom/:id': 'storeDetailFullScreen',
             'places/:id': 'storeDetail'
         },
         initialize: function (options) {

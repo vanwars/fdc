@@ -8,13 +8,11 @@ define([
         },
         storeDetail: function (id) {
             //todo: move this to store detail:
-            console.log('storeDetail');
             this.app.vent.trigger("load-panel", id, false);
             this.app.mainRegion.$el.hide();
             this.app.mapRegion.$el.show();
         },
-        storeDetailMobile: function (id) {
-            console.log('storeDetailMobile');
+        storeDetailFullScreen: function (id) {
             this.app.vent.trigger("load-panel", id, true);
         },
         home: function () {
