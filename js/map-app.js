@@ -1,4 +1,5 @@
 define([
+    "jquery",
     "marionette",
     "backbone",
     "router",
@@ -6,7 +7,7 @@ define([
     "views/places-preview",
     "views/map-view",
     "handlebars-helpers"
-], function (Marionette, Backbone, Router, Collection, PlacesPreview, MapView) {
+], function ($, Marionette, Backbone, Router, Collection, PlacesPreview, MapView) {
     "use strict";
     var MapApp = Marionette.Application.extend({
         regions: {
@@ -18,6 +19,10 @@ define([
             Marionette.Application.prototype.start.apply(this, [options]);
             this.router = new Router({ app: this});
             Backbone.history.start();
+        },
+        isMobile: function () {
+            console.log($(document).width());
+            return $(document).width() < 700;
         },
         initialize: function (options) {
             Marionette.Application.prototype.initialize.apply(this, [options]);

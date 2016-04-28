@@ -2,7 +2,14 @@
 
 @font-face {
 font-family: ProximaNova;
-src: url("../fonts/ProximaNova.otf") format("opentype");
+src: url("../../fonts/ProximaNova.otf") format("opentype");
+}
+@font-face {
+  font-family: 'lg';
+  src: url('../assets/handsean.ttf');
+  src: local('‰÷¼'), url('../assets/handsean.ttf') format('truetype');
+  font-weight: normal;
+  font-style: bold;
 }
 
 @font-face {
@@ -417,7 +424,9 @@ svg {
 
 
 @media (max-width: 700px) {
-
+    .nav {
+        display: none;
+    }
     #title-text{
         width:100%;
         padding-top:80px;
@@ -439,7 +448,7 @@ svg {
         bottom:0px;
         border-style:none;
     }
-    .photo-container{
+    .photo-container {
         display: inline-block;
         height: 150px;
         width: 150px;
@@ -525,10 +534,39 @@ svg {
     z-index: 1000;
     font-family:'Cubano';
     text-align: right;
+    width: 100%;
+}
+.leaflet-container a.lg, .leaflet-container a.lg:hover, .leaflet-container a.lg:visited {
+    color: #444;
+    text-decoration: none;
+    font: 12px/12px 'lg';
+    line-height: 25px;
+}
+.leaflet-left {
+    left: 0;
+    height: 25px;
+}
 
+#bottom-nav .lg {
+    float: left;
+    font: 14px/14px 'lg';
+    line-height: 30px;
+} 
+#bottom-nav .lg img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+.lg-logo {
+    width: 25px;
+    margin-right: 5px;
+    vertical-align: sub;
 }
 
 @media (max-width: 700px) {
+    /*#bottom-nav .lg {
+        display: none;
+    }*/
     #social-media-cta{
         display: none;
     }
@@ -544,9 +582,6 @@ svg {
 /**************************/
 /* New Styles Sarah Added */
 /**************************/
-.nav {
-    display: none;
-}
 .carousel-control {
     position: absolute;
     text-decoration: none;

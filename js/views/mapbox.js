@@ -43,6 +43,14 @@ define(["jquery", "marionette", "mapbox-lib", "views/marker", "marker-clusterer"
                     zoomControl: false
                 }).setView(this.opts.center, this.opts.zoom);
                 this.map.reset = true;
+
+                //add logo:
+                var logoControl = L.control.attribution({ position: "bottomright" });
+                //Powered by
+                logoControl.setPrefix('<a class="lg" href="http://localground.org" target="_blank"><img class="lg-logo" src="assets/lg-logo-circle-100.png" />Local Ground</a>');
+                logoControl.addTo(this.map);
+
+                //add zoom:
                 new L.Control.Zoom({ position: 'topright' }).addTo(this.map);
                 if (this.options.disableZoomScroll) {
                     this.map.scrollWheelZoom.disable();
