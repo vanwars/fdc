@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Slabo+27px);
 
 @font-face {
-font-family: ProximaNova;
-src: url("../../fonts/ProximaNova.otf") format("opentype");
+  font-family: ProximaNova;
+  src: url("../../fonts/ProximaNova.otf") format("opentype");
+  src: url("../fonts/ProximaNova.otf") format("opentype");
 }
 @font-face {
   font-family: 'lg';
