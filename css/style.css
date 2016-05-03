@@ -41,7 +41,7 @@ html, body {
 h1 { 
     font-weight: 700;
     color: #fff;
-    font-size: 3.6em;
+    font-size: 4.6em;
     margin: 20px;
     margin-bottom: 0;
     font-family:'Cubano', sans-serif;
@@ -377,7 +377,7 @@ svg {
     text-decoration: none;
 }
 .food-description {
-    color: #585858;
+    color: black;
     font-size: 1em;
     padding: 0 14px 28px;
     margin: 0;
@@ -392,6 +392,23 @@ svg {
     border-radius: 5px;
     padding:3px 10px;
     margin: 5px 7px 8px;
+}
+
+#search-button-bottom-mobile{
+    background-color: #e8700d;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 5px;
+    padding:3px 10px;
+    margin: 5px 7px 8px;
+    text-align:center;
+}
+
+.button-center{
+    text-align:center;
+    padding-bottom:20px;
 }
 
 
@@ -579,7 +596,7 @@ svg {
 
 
 .close-btn {
-    left: 4px;
+    right: 4px;
     top: 70px;
     font-size: 25px;
     line-height: 25px;
