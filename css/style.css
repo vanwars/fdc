@@ -141,7 +141,7 @@ footer{
 
 .mobile-layout > h3{
     text-align: center;
-    padding-right: 40px;
+    padding-right: 10px;
 }
 
 .map-view {
@@ -483,7 +483,7 @@ svg {
         font-size: 1.2em;
     }
     #city-name{
-        font-size:1em;
+        font-size:0.8em;
         padding:14px;
         text-align:center;
     }
@@ -656,4 +656,5 @@ svg {
 .fa-home {
    color: #FFF;
    float: left;
+   margin-top: -2px;
 }
