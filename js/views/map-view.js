@@ -32,6 +32,15 @@ define(["marionette",
                     app: this.app
                 });
                 this.leftPanelRegion.show(this.storeView);
+                if (this.app.isMobile()) {
+                    $('#map').css({
+                        "height": "calc(100vh - 188px)"
+                    });
+                } else {
+                    $('#map').css({
+                        "height": "calc(100vh - 75px)"
+                    });
+                }
                 this.leftPanelRegion.$el.show();
                 if (isFullScreen) {
                     this.mapboxRegion.$el.hide();

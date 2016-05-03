@@ -36,6 +36,7 @@ define([
         },
         hideSheet: function (e) {
             this.app.vent.trigger('load-panel', this.model.get("id"), false);
+            this.model.trigger("center-marker");
             if (e) { e.preventDefault(); }
         },
         onRender: function () {
