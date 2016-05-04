@@ -53,7 +53,7 @@ define(["marionette",
                 if (this.leftPanelRegion.$el) {
                     this.leftPanelRegion.$el.hide();
                 }
-                this.$el.find("#city-name").html("#FIVEDOLLARCHALLENGE");
+                this.$el.find("#city-name").html("#5DOLLARCHALLENGE");
                 this.mapboxRegion.$el.show();
             }
         });
