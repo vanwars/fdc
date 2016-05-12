@@ -21,7 +21,7 @@ define([
             Backbone.history.start();
         },
         isMobile: function () {
-            console.log($(document).width());
+            //console.log($(document).width());
             return $(document).width() < 700;
         },
         initialize: function (options) {

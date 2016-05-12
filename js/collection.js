@@ -54,7 +54,11 @@ define(["underscore", "backbone", "lib/sqlParser"],
             },
 
             comparator: function (collection) {
-                return collection.get('extras').order;
+                try {
+                    return collection.get('extras').order;
+                } catch (e) {
+                    return 0;
+                }
             }
 
         });
