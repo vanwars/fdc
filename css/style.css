@@ -581,6 +581,17 @@ svg {
     vertical-align: sub;
 }
 
+.yr-logo {
+    width: 25px;
+    vertical-align: sub;
+}
+
+.yr-logo-right {
+    width: 25px;
+    margin-top: -3px;
+    float: right;
+}
+
 @media (max-width: 700px) {
     /*#bottom-nav .lg {
         display: none;
