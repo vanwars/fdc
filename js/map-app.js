@@ -29,7 +29,7 @@ define([
 
             //fetch data:
             this.collection = new Collection(null, {
-                api_endpoint: 'https://dev.localground.org/api/0/photos/',
+                api_endpoint: 'http://dev.localground.org/api/0/photos/',
                 page_size: 150,
                 server_query: "WHERE project = 33"
             });
