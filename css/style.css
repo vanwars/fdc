@@ -172,15 +172,13 @@ footer{
     min-height: 100%;
     background: #FFF;
     z-index: 1000;
+    background: url('../assets/bridge.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.splash-container {
-    height: 485px;
-    min-height: 390px;
-    background-image: url('../assets/unitedStates.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 .nav-bar {
     background: #FFF;
 }
